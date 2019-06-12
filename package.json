@@ -1,0 +1,19 @@
+{
+  "name": "vl-ui-grid",
+  "version": "0.0.0",
+  "description": "De grid system voor vl-ui",
+  "main": "vl-grid.js",
+  "scripts": {
+    "test": "wct -l chrome,firefox --npm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-grid.git"
+  },
+  "author": "DIDM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milieuinfo/webcomponent-vl-ui-grid/issues"
+  },
+  "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-grid#readme"
+}
