@@ -1,10 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>vl-gird voorbeeld</title>
+  <meta name="viewport" content="width=device-width">
+  <script type="module" src="demo.js"></script>
+  <script type="module"
+          src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script type="module" src="../vl-grid.src.js"></script>
 </head>
+
 <body>
-$END$
+<h1>vl-ui-grid demo</h1>
+<p>
+  <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/grid/">Meer
+    voorbeelden en documentatie</a>
+</p>
+
+<div>
+  <h2>Region</h2>
+  <p>Niet geïmplementeerd</p>
+</div>
+
+<div>
+  <h2>Layout</h2>
+  <p>Niet geïmplementeerd</p>
+</div>
+
+<div>
+  <h2>Grid</h2>
+  <pre>
+      <code class="line-numbers language-markup">
+        <div class="demo">
+          &lt;vl-grid&gt;
+            ...
+          &lt;/vl-grid&gt;
+        </div>
+      </code>
+    </pre>
+</div>
+
+<div>
+  <h2>Alignment</h2>
+  <p>Niet geïmplementeerd</p>
+</div>
+
+<div>
+  <h2>Columns</h2>
+  <pre>
+      <code class="line-numbers language-markup">
+        <div class="demo">
+          &lt;vl-grid&gt;
+            &lt;vl-column size="4" max-size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;Ik take 4/12 of the grid width&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vl-column&gt;
+          &lt;/vl-grid&gt;
+          &lt;br/&gt;
+          &lt;vl-grid&gt;
+            &lt;vl-column size="3" max-size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;I take 3/12 of the grid width&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vl-column&gt;
+            &lt;vl-column size="9" max-size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;I take 6/12 of the grid width&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vl-column&gt;
+          &lt;/vl-grid&gt;
+        </div>
+      </code>
+    </pre>
+  <div class="demo">
+    <vl-grid>
+      <vl-column size="4" max-size="12">
+        <div>
+          <p>I take 4/12 of the grid width</p>
+        </div>
+      </vl-column>
+    </vl-grid>
+    <br/>
+    <vl-grid>
+      <vl-column size="3" max-size="12">
+        <div>
+          <p>I take 3/12 of the grid width</p>
+        </div>
+      </vl-column>
+      <vl-column size="9" max-size="12">
+        <div>
+          <p>I take 6/12 of the grid width</p>
+        </div>
+      </vl-column>
+    </vl-grid>
+  </div>
+</div>
+
+<div>
+  <h2>Make things responsive</h2>
+  <p>Geïmplementeerd: <strong>.col</strong> <strong>.col--s</strong> </p>
+  <pre>
+      <code class="line-numbers language-markup">
+        <div class="demo">
+          &lt;vl-grid&gt;
+            &lt;vl-column size="4" max-size="12" small-size="12" small-max-size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;I am 4/12 on large and full width on small&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vl-column&gt;
+          &lt;/vl-grid&gt;
+        </div>
+      </code>
+    </pre>
+  <div class="demo">
+    <vl-grid>
+      <vl-column size="4" max-size="12" small-size="12" small-max-size="12">
+        <div>
+          <p>I am 4/12 on large and full width on small</p>
+        </div>
+      </vl-column>
+    </vl-grid>
+  </div>
+</div>
+
+<div>
+  <h2>Pushing a column</h2>
+  <p>Gïmplementeerd: <strong>.vl-push</strong></p>
+  <p>Niet geïmplementeerd: <strong>.vl-push--reset</strong></p>
+  <pre>
+      <code class="line-numbers language-markup">
+        <div class="demo">
+          &lt;vl-grid&gt;
+            &lt;vl-column size="4" max-size="12" push="1"&gt;
+              &lt;div&gt;
+                &lt;p&gt;I am pushed by 1/12th!&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vl-column&gt;
+          &lt;/vl-grid&gt;
+        </div>
+      </code>
+    </pre>
+  <div class="demo">
+    <vl-grid>
+      <vl-column size="4" max-size="12" push="1">
+        <div>
+          <p>I am pushed by 1/12th!</p>
+        </div>
+      </vl-column>
+    </vl-grid>
+  </div>
+</div>
+
+<div>
+  <h2>Nesting columns</h2>
+  <pre>
+      <code class="line-numbers language-markup">
+        <div class="demo">
+          &lt;vl-grid&gt;
+            &lt;vl-column size="7" max-size="12"&gt;
+              &lt;vl-grid&gt;
+                &lt;vl-column size="6" max-size="12"&gt;
+                  &lt;div&gt;
+                    &lt;p&gt;We are only the half of 7/12th&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/vl-column&gt;
+                &lt;vl-column size="6" max-size="12"&gt;
+                  &lt;div&gt;
+                    &lt;p&gt;We are only the half of 7/12th&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/vl-column&gt;
+              &lt;/vl-grid&gt;
+            &lt;/vl-column&gt;
+          &lt;/vl-grid&gt;
+        </div>
+      </code>
+    </pre>
+  <div class="demo">
+    <vl-grid>
+      <vl-column size="7" max-size="12">
+        <vl-grid>
+          <vl-column size="6" max-size="12">
+            <div>
+              <p>We are only the half of 7/12th</p>
+            </div>
+          </vl-column>
+          <vl-column size="6" max-size="12">
+            <div>
+              <p>We are only the half of 7/12th</p>
+            </div>
+          </vl-column>
+        </vl-grid>
+      </vl-column>
+    </vl-grid>
+  </div>
+</div>
+
 </body>
 </html>
