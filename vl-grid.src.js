@@ -48,9 +48,7 @@ export class VlColumn extends VlElement(HTMLElement) {
             @import '/node_modules/vl-ui-core/core-style.css';
           </style>
         
-          <div>
-              <slot></slot>
-          </div>
+          <slot></slot>
     `);
   }
 
