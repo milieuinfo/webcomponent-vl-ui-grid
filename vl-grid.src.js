@@ -1,5 +1,13 @@
 import {VlElement} from "/node_modules/vl-ui-core/vl-core.js";
 
+/**
+ * VlGrid
+ * @class
+ * @classdesc
+ * De grid(.vl-grid) dient om de lay-out van jouw pagina in order te brengen.
+ * Je kan  vl-grid vergelijken met de Row element in Bootstrap.
+ * @extends VlElement
+ */
 export class VlGrid extends VlElement(HTMLElement) {
   constructor() {
     super(`
@@ -15,6 +23,23 @@ export class VlGrid extends VlElement(HTMLElement) {
     this.classList.add('vl-grid');
   }
 }
+
+/**
+ * VlColumn
+ * @class
+ * @classdesc
+ * <vl-column size="3" => .vl-col--3-12
+ * <vl-column size="3" small-size="4"></vl-column> => .vl-col--3-4
+ * <vl-column small-size="12"></vl-column> => .vl-col--12-12--s
+ * <vl-column small-size="8" small-max-size="10"></vl-column> => .vl-col--8-12--s
+ * <vl-column size="2" max-size="4" push="1"></vl-column> => .vl-col--2-4 .vl-pus--1-4
+ * @extends VlElement
+ * @property {number} size
+ * @property {number} max-size - default waarde is 12
+ * @property {number} small-size
+ * @property {number} small-max-size - default waarde is 12
+ * @property {number} push
+ */
 
 export class VlColumn extends VlElement(HTMLElement) {
   constructor() {

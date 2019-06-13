@@ -1,17 +1,1 @@
-import{VlElement}from"/node_modules/vl-ui-core/vl-core.js";export class VlGrid extends VlElement(HTMLElement){constructor(){super(`
-          <style>
-            @import '../style.css';
-          </style>
-        
-          <div class="vl-grid">
-              <slot></slot>
-          </div>
-    `)}};export class VlColumn extends VlElement(HTMLElement){constructor(){super(`
-          <style>
-            @import '../style.css';
-          </style>
-        
-          <div data-vl-column>
-              <slot></slot>
-          </div>
-    `)}get _columnElement(){return this._element}get _sizeAttribute(){return this.getAttribute("size")}get _maxSizeAttribute(){return this.getAttribute("max-size")}connectedCallback(){this._setClasses()}_setClasses(){const prefix="vl-col--";this._columnElement.classList.add(prefix.concat(this._sizeAttribute,"-",this._maxSizeAttribute))}};customElements.define("vl-grid",VlGrid),customElements.define("vl-column",VlColumn);
+import{VlElement}from"/node_modules/vl-ui-core/vl-core.js";export class VlGrid extends(VlElement(HTMLElement)){constructor(){super("\n          <style>\n            @import '/node_modules/vl-ui-core/core-style.css';\n          </style>\n\n          <slot></slot>\n    ")}connectedCallback(){this.classList.add("vl-grid")}};export class VlColumn extends(VlElement(HTMLElement)){constructor(){super("\n          <style>\n            @import '/node_modules/vl-ui-core/core-style.css';\n          </style>\n        \n          <div>\n              <slot></slot>\n          </div>\n    ")}get _defaultMaxSize(){return 12}get _columnElement(){return this}get _sizeAttribute(){return this.getAttribute("size")}get _maxSizeAttribute(){const t=this.getAttribute("max-size");return t||this._defaultMaxSize}get _smallSizeAttribute(){return this.getAttribute("small-size")}get _smallMaxSizeAttribute(){const t=this.getAttribute("small-max-size");return t||this._defaultMaxSize}get _pushAttribute(){return this.getAttribute("push")}connectedCallback(){this._setClasses()}_setClasses(){this._setNormalSizeClasses(),this._setSmallSizeClasses(),this._setPushSizeClasses()}_setNormalSizeClasses(){const t=this._sizeAttribute,e=this._maxSizeAttribute;if(t&&e){const s="vl-col--";this._columnElement.classList.add(s.concat(t,"-",e))}}_setSmallSizeClasses(){const t=this._smallSizeAttribute,e=this._smallMaxSizeAttribute;if(t&&e){const s="vl-col--";this._columnElement.classList.add(s.concat(t,"-",e,"--","s"))}}_setPushSizeClasses(){const t=this._pushAttribute,e=this._maxSizeAttribute;if(t&&e){const s="vl-push--";this._columnElement.classList.add(s.concat(t,"-",e))}}};customElements.define("vl-grid",VlGrid),customElements.define("vl-column",VlColumn);
