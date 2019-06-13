@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <script type="module" src="../vl-grid.src.js"></script>
+</head>
+
+<body>
+<test-fixture id="vl-grid-fixture">
+  <template>
+    <vl-grid></vl-grid>
+    >
+  </template>
+</test-fixture>
+
+<test-fixture id="vl-column-3-4-fixture">
+  <template>
+    <vl-column size="3" max-size="4"></vl-column>
+  </template>
+</test-fixture>
+
+<test-fixture id="vl-column-3-fixture">
+  <template>
+    <vl-column size="3"></vl-column>
+  </template>
+</test-fixture>
+
+<test-fixture id="vl-column-responsive-fixture">
+  <template>
+    <vl-column size="3" small-size="12"></vl-column>
+  </template>
+</test-fixture>
+
+<test-fixture id="vl-column-push-fixture">
+  <template>
+    <vl-column size="3" push="1"></vl-column>
+  </template>
+</test-fixture>
+
+<script>
+  suite('vl-grid', () => {
+
+    test('heeft de vl-grid class', () => {
+      const element = fixture('vl-grid-fixture');
+      assert.isTrue(element.classList.contains('vl-grid'));
+    })
+  });
+
+  suite('vl-column', () => {
+
+    test('class komt overeen met attributes "size" en "max-size"', () => {
+      const element = fixture('vl-column-3-4-fixture');
+      assert.isTrue(element.classList.contains('vl-col--3-4'));
+    });
+
+    test('class komt overeen met attributes "size" en default max-size', () => {
+      const element = fixture('vl-column-3-fixture');
+      assert.isTrue(element.classList.contains('vl-col--3-12'));
+    });
+
+    test('class komt overeen met attributes "size","small-size" en default max-size', () => {
+      const element = fixture('vl-column-responsive-fixture');
+      assert.isTrue(element.classList.contains('vl-col--3-12'));
+      assert.isTrue(element.classList.contains('vl-col--12-12--s'));
+    });
+
+    test('class komt overeen met attributes "size" en "push"', () => {
+      const element = fixture('vl-column-push-fixture');
+      assert.isTrue(element.classList.contains('vl-col--3-12'));
+      assert.isTrue(element.classList.contains('vl-push--1-12'));
+    });
+  });
+
+</script>
+</body>
+
+</html>

@@ -29,6 +29,10 @@ export class VlColumn extends VlElement(HTMLElement) {
     `);
   }
 
+  get _defaultMaxSize() {
+    return 12;
+  }
+
   get _columnElement() {
     return this;
   }
@@ -38,7 +42,12 @@ export class VlColumn extends VlElement(HTMLElement) {
   }
 
   get _maxSizeAttribute() {
-    return this.getAttribute('max-size');
+    const value = this.getAttribute('max-size');
+    if (value) {
+      return value;
+    } else {
+      return this._defaultMaxSize;
+    }
   }
 
   get _smallSizeAttribute() {
@@ -46,7 +55,12 @@ export class VlColumn extends VlElement(HTMLElement) {
   }
 
   get _smallMaxSizeAttribute() {
-    return this.getAttribute('small-max-size');
+    const value = this.getAttribute('small-max-size');
+    if (value) {
+      return value;
+    } else {
+      return this._defaultMaxSize;
+    }
   }
 
   get _pushAttribute() {
@@ -58,38 +72,39 @@ export class VlColumn extends VlElement(HTMLElement) {
   }
 
   _setClasses() {
-   this._setNormalSizeClasses();
-   this._setSmallSizeClasses();
-   this._setPushSizeClasses();
+    this._setNormalSizeClasses();
+    this._setSmallSizeClasses();
+    this._setPushSizeClasses();
   }
 
-  _setNormalSizeClasses(){
+  _setNormalSizeClasses() {
     const size = this._sizeAttribute;
     const maxSize = this._maxSizeAttribute;
 
-    if(size&&maxSize){
-      const prefix= 'vl-col--';
+    if (size && maxSize) {
+      const prefix = 'vl-col--';
       this._columnElement.classList.add(prefix.concat(size, '-', maxSize));
     }
   }
 
-  _setSmallSizeClasses(){
+  _setSmallSizeClasses() {
     const smallSize = this._smallSizeAttribute;
     const smallMaxSize = this._smallMaxSizeAttribute;
 
-    if(smallSize&&smallMaxSize){
+    if (smallSize && smallMaxSize) {
       const prefix = 'vl-col--';
-      this._columnElement.classList.add(prefix.concat(smallSize,'-',smallMaxSize,'--','s'));
+      this._columnElement.classList.add(
+          prefix.concat(smallSize, '-', smallMaxSize, '--', 's'));
     }
   }
 
-  _setPushSizeClasses(){
+  _setPushSizeClasses() {
     const pushSize = this._pushAttribute;
     const maxSize = this._maxSizeAttribute;
 
-    if(pushSize&&maxSize){
+    if (pushSize && maxSize) {
       const prefix = 'vl-push--';
-      this._columnElement.classList.add(prefix.concat(pushSize,'-',maxSize));
+      this._columnElement.classList.add(prefix.concat(pushSize, '-', maxSize));
     }
   }
 }
