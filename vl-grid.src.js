@@ -12,7 +12,7 @@ export class VlGrid extends VlElement(HTMLElement) {
   constructor() {
     super(`
           <style>
-            @import '../core-style.css';
+            @import '../style.css';
           </style>
 
           <slot></slot>
@@ -45,7 +45,7 @@ export class VlColumn extends VlElement(HTMLElement) {
   constructor(html) {
     super(html ? html : `
           <style>
-            @import '../core-style.css';
+            @import '../style.css';
           </style>
         
           <slot></slot>
