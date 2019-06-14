@@ -12,7 +12,7 @@ export class VlGrid extends VlElement(HTMLElement) {
   constructor() {
     super(`
           <style>
-            @import '/node_modules/vl-ui-core/core-style.css';
+            @import '../core-style.css';
           </style>
 
           <slot></slot>
