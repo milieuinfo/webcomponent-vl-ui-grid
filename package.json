@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-grid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "De grid system voor vl-ui",
   "main": "vl-grid.js",
   "scripts": {
