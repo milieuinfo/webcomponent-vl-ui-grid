@@ -90,6 +90,15 @@ export class VlColumn extends VlElement(HTMLElement) {
     return this.getAttribute('push');
   }
 
+  get _classPrefix() {
+    return 'vl-col--';
+  }
+
+  get _pushPrefix() {
+    return 'vl-push--';
+  }
+
+
   connectedCallback() {
     this._setClasses();
   }
@@ -105,8 +114,8 @@ export class VlColumn extends VlElement(HTMLElement) {
     const maxSize = this._maxSizeAttribute;
 
     if (size && maxSize) {
-      const prefix = 'vl-col--';
-      this._columnElement.classList.add(prefix.concat(size, '-', maxSize));
+      this._columnElement.classList.add(
+          this._classPrefix.concat(size, '-', maxSize));
     }
   }
 
@@ -115,9 +124,8 @@ export class VlColumn extends VlElement(HTMLElement) {
     const smallMaxSize = this._smallMaxSizeAttribute;
 
     if (smallSize && smallMaxSize) {
-      const prefix = 'vl-col--';
       this._columnElement.classList.add(
-          prefix.concat(smallSize, '-', smallMaxSize, '--', 's'));
+          this._classPrefix.concat(smallSize, '-', smallMaxSize, '--', 's'));
     }
   }
 
@@ -126,8 +134,8 @@ export class VlColumn extends VlElement(HTMLElement) {
     const maxSize = this._maxSizeAttribute;
 
     if (pushSize && maxSize) {
-      const prefix = 'vl-push--';
-      this._columnElement.classList.add(prefix.concat(pushSize, '-', maxSize));
+      this._columnElement.classList.add(
+          this._pushPrefix.concat(pushSize, '-', maxSize));
     }
   }
 }
