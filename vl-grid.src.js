@@ -9,14 +9,14 @@ import {VlElement} from "/node_modules/vl-ui-core/vl-core.js";
  * @extends VlElement
  */
 export class VlGrid extends VlElement(HTMLElement) {
-  constructor() {
-    super(`
+  constructor(html) {
+    super(html ? html : `
           <style>
             @import '../style.css';
           </style>
-
+        
           <slot></slot>
-    `)
+    `);
   }
 
   connectedCallback() {
