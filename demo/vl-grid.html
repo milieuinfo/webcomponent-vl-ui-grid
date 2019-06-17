@@ -41,6 +41,54 @@
 </div>
 
 <div>
+  <h2>Stacking</h2>
+  <p>Gebruik <strong>[is-stacked]</strong> attribute om een marge tussen de gestapelde kolommen toe
+    te voegen</p>
+</div>
+<pre>
+      <code class="line-numbers language-markup">
+        <div class="demo">
+          &lt;vl-grid is-stacked&gt;
+            &lt;vl-column size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;Stacked&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vl-column&gt;
+            &lt;vl-column size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;Stacked&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vl-column&gt;
+            &lt;vl-column size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;Stacked&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/vl-column&gt;
+          &lt;/vl-grid&gt;
+        </div>
+      </code>
+    </pre>
+<div class="demo">
+  <vl-grid is-stacked>
+    <vl-column size="12">
+      <div>
+        <p>Stacked</p>
+      </div>
+    </vl-column>
+    <vl-column size="12">
+      <div>
+        <p>Stacked</p>
+      </div>
+    </vl-column>
+    <vl-column size="12">
+      <div>
+        <p>Stacked</p>
+      </div>
+    </vl-column>
+  </vl-grid>
+</div>
+
+<div>
   <h2>Alignment</h2>
   <p>Niet geïmplementeerd</p>
 </div>
@@ -117,7 +165,8 @@
               *size="3" small-size="4" => .vl-col--3-4
               *small-size="12" => .vl-col--12-12--s
               *small-size="8" small-max-size="10" => .vl-col--8-12--s
-               *size="2" max-size="4" push="1"=> .vl-col--2-4 .vl-pus--1-4
+              *size="2" max-size="4" push="1"=> .vl-col--2-4 .vl-push--1-4
+
           &lt;vl-grid&gt;
             &lt;vl-column size="4" max-size="12" small-size="12" small-max-size="12"&gt;
               &lt;div&gt;

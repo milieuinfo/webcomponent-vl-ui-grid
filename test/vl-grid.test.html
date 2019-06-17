@@ -41,12 +41,27 @@
   </template>
 </test-fixture>
 
+<test-fixture id="vl-grid-is-stacked-fixture">
+  <template>
+    <vl-grid is-stacked>
+      <vl-column size="12">Stack1</vl-column>
+      <vl-column size="12">Stack2</vl-column>
+      <vl-column size="12">Stack3</vl-column>
+    </vl-grid>
+  </template>
+</test-fixture>
+
 <script>
   suite('vl-grid', () => {
 
     test('heeft de vl-grid class', () => {
       const element = fixture('vl-grid-fixture');
       assert.isTrue(element.classList.contains('vl-grid'));
+    });
+
+    test('heeft de vl-grid--is-stacked class', () => {
+      const element = fixture('vl-grid-is-stacked-fixture');
+      assert.isTrue(element.classList.contains('vl-grid--is-stacked'));
     })
   });
 

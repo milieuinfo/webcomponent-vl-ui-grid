@@ -19,8 +19,16 @@ export class VlGrid extends VlElement(HTMLElement) {
     `)
   }
 
+  static get _observedClassAttributes() {
+    return ["is-stacked"]
+  }
+
   connectedCallback() {
     this.classList.add('vl-grid');
+  }
+
+  get _classPrefix() {
+    return "vl-grid--";
   }
 }
 
@@ -97,7 +105,6 @@ export class VlColumn extends VlElement(HTMLElement) {
   get _pushPrefix() {
     return 'vl-push--';
   }
-
 
   connectedCallback() {
     this._setClasses();
