@@ -34,6 +34,12 @@
   </template>
 </test-fixture>
 
+<test-fixture id="vl-column-default-min-fixture">
+  <template>
+    <div is="vl-column" max-size="12" small-max-size="12"></div>
+  </template>
+</test-fixture>
+
 <test-fixture id="vl-column-push-fixture">
   <template>
     <div is="vl-column" size="3" push="1"></div>
@@ -42,17 +48,12 @@
 
 <test-fixture id="vl-grid-is-stacked-fixture">
   <template>
-    <div is="vl-grid" is-stacked>
-      <div is="vl-column" size="12">Stack1</div>
-      <div is="vl-column" size="12">Stack2</div>
-      <div is="vl-column" size="12">Stack3</div>
-    </vl-grid>
+    <div is="vl-grid" is-stacked></vl-grid>
   </template>
 </test-fixture>
 
 <script>
   suite('vl-grid', () => {
-
     test('heeft de vl-grid class', () => {
       const element = fixture('vl-grid-fixture');
       assert.isTrue(element.classList.contains('vl-grid'));
@@ -65,24 +66,29 @@
   });
 
   suite('vl-column', () => {
-
-    test('class komt overeen met attributes "size" en "max-size"', () => {
+    test('class komt overeen met attributes size en max-size', () => {
       const element = fixture('vl-column-3-4-fixture');
       assert.isTrue(element.classList.contains('vl-col--3-4'));
     });
 
-    test('class komt overeen met attributes "size" en default max-size', () => {
+    test('class komt overeen met attributes size en default max-size', () => {
       const element = fixture('vl-column-3-fixture');
       assert.isTrue(element.classList.contains('vl-col--3-12'));
     });
 
-    test('class komt overeen met attributes "size","small-size" en default max-size', () => {
+    test('class komt overeen met attributes size, small-size en default max-size en small-max-size', () => {
       const element = fixture('vl-column-responsive-fixture');
       assert.isTrue(element.classList.contains('vl-col--3-12'));
       assert.isTrue(element.classList.contains('vl-col--12-12--s'));
     });
 
-    test('class komt overeen met attributes "size" en "push"', () => {
+    test('class komt overeen met attributes max-size, small-max-size en default size en small-size', () => {
+      const element = fixture('vl-column-default-min-fixture');
+      assert.isTrue(element.classList.contains('vl-col--12-12'));
+      assert.isTrue(element.classList.contains('vl-col--12-12--s'));
+    });
+
+    test('class komt overeen met attributes size en push', () => {
       const element = fixture('vl-column-push-fixture');
       assert.isTrue(element.classList.contains('vl-col--3-12'));
       assert.isTrue(element.classList.contains('vl-push--1-12'));

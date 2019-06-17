@@ -82,7 +82,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <div>
   <h2>Alignment</h2>
@@ -91,6 +90,30 @@
 
 <div>
   <h2>Columns</h2>
+  <p>De default min-size van column is 12.</p>
+  <pre>
+      <code class="line-numbers language-markup">
+        <div class="demo">
+          &lt;div is="vl-grid"&gt;
+            &lt;div is="vl-colum" max-size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;12/12 breedte&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        </div>
+      </code>
+    </pre>
+  <div class="demo">
+    <div is="vl-grid">
+      <div is="vl-column" max-size="12">
+        <div class="presentation__grid__col">
+          <p>12/12 breedte</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <p>De default max-size van column is 12.</p>
   <pre>
       <code class="line-numbers language-markup">
@@ -115,7 +138,7 @@
     </div>
   </div>
 
-  <p>De default max-size overschrijven</p>
+  <p>De default min-size en max-size overschrijven</p>
   <pre>
     <code class="line-numbers language-markup">
       <div class="demo">
@@ -180,26 +203,49 @@
 
 <div>
   <h2>Pushing a column</h2>
-  <p></p>
   <p>Niet geïmplementeerd: <strong>.vl-push--reset</strong></p>
   <pre>
-      <code class="line-numbers language-markup">
-        <div class="demo">
-          &lt;div is="vl-grid"&gt;
-            &lt;div is="vl-colum" size="4" max-size="12" push="1"&gt;
-              &lt;div&gt;
-                &lt;p&gt;Pushed bij 1/12&lt;/p&gt;
-              &lt;/div&gt;
+    <code class="line-numbers language-markup">
+      <div class="demo">
+        &lt;div is="vl-grid"&gt;
+          &lt;div is="vl-colum" size="4" max-size="12" push="1"&gt;
+            &lt;div&gt;
+              &lt;p&gt;Pushed met 1/12&lt;/p&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-        </div>
-      </code>
-    </pre>
+        &lt;/div&gt;
+      </div>
+    </code>
+  </pre>
   <div class="demo">
     <div is="vl-grid">
       <div is="vl-column" size="4" max-size="12" push="1">
         <div class="presentation__grid__col">
-          <p>Pushed bij 1/12!</p>
+          <p>Pushed met 1/12!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>De default push-size</p>
+  <pre>
+    <code class="line-numbers language-markup">
+      <div class="demo">
+        &lt;div is="vl-grid"&gt;
+          &lt;div is="vl-colum" size="4" max-size="12"&gt;
+            &lt;div&gt;
+              &lt;p&gt;Pushed met 0/12&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </div>
+    </code>
+  </pre>
+  <div class="demo">
+    <div is="vl-grid">
+      <div is="vl-column" size="4" max-size="12">
+        <div class="presentation__grid__col">
+          <p>Pushed met 0/12!</p>
         </div>
       </div>
     </div>
