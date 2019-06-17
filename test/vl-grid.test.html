@@ -12,41 +12,40 @@
 <body>
 <test-fixture id="vl-grid-fixture">
   <template>
-    <vl-grid></vl-grid>
-    >
+    <div is="vl-grid"></vl-grid>
   </template>
 </test-fixture>
 
 <test-fixture id="vl-column-3-4-fixture">
   <template>
-    <vl-column size="3" max-size="4"></vl-column>
+    <div is="vl-column" size="3" max-size="4"></div>
   </template>
 </test-fixture>
 
 <test-fixture id="vl-column-3-fixture">
   <template>
-    <vl-column size="3"></vl-column>
+    <div is="vl-column" size="3"></div>
   </template>
 </test-fixture>
 
 <test-fixture id="vl-column-responsive-fixture">
   <template>
-    <vl-column size="3" small-size="12"></vl-column>
+    <div is="vl-column" size="3" small-size="12"></div>
   </template>
 </test-fixture>
 
 <test-fixture id="vl-column-push-fixture">
   <template>
-    <vl-column size="3" push="1"></vl-column>
+    <div is="vl-column" size="3" push="1"></div>
   </template>
 </test-fixture>
 
 <test-fixture id="vl-grid-is-stacked-fixture">
   <template>
-    <vl-grid is-stacked>
-      <vl-column size="12">Stack1</vl-column>
-      <vl-column size="12">Stack2</vl-column>
-      <vl-column size="12">Stack3</vl-column>
+    <div is="vl-grid" is-stacked>
+      <div is="vl-column" size="12">Stack1</div>
+      <div is="vl-column" size="12">Stack2</div>
+      <div is="vl-column" size="12">Stack3</div>
     </vl-grid>
   </template>
 </test-fixture>

@@ -56,12 +56,7 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   get _maxSizeAttribute() {
-    const value = this.getAttribute('max-size');
-    if (value) {
-      return value;
-    } else {
-      return this._defaultMaxSize;
-    }
+    return this.getAttribute('max-size') || this._defaultMaxSize;
   }
 
   get _smallSizeAttribute() {
@@ -69,12 +64,7 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   get _smallMaxSizeAttribute() {
-    const value = this.getAttribute('small-max-size');
-    if (value) {
-      return value;
-    } else {
-      return this._defaultMaxSize;
-    }
+    return this.getAttribute('small-max-size') || this._defaultMaxSize;;
   }
 
   get _pushAttribute() {
