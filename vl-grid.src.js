@@ -48,7 +48,6 @@ export class VlGrid extends VlElement(HTMLElement) {
  * @property {number} small-max-size - default waarde is 12
  * @property {number} push
  */
-
 export class VlColumn extends VlElement(HTMLElement) {
   constructor(html) {
     super(`
