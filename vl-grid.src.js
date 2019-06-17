@@ -9,14 +9,14 @@ import {VlElement} from "/node_modules/vl-ui-core/vl-core.js";
  * @extends VlElement
  */
 export class VlGrid extends VlElement(HTMLElement) {
-  constructor() {
+  constructor(html) {
     super(`
           <style>
-            @import '../core-style.css';
+            @import '../style.css';
           </style>
-
+        
           <slot></slot>
-    `)
+    `);
   }
 
   static get _observedClassAttributes() {
@@ -50,10 +50,10 @@ export class VlGrid extends VlElement(HTMLElement) {
  */
 
 export class VlColumn extends VlElement(HTMLElement) {
-  constructor() {
+  constructor(html) {
     super(`
           <style>
-            @import '/node_modules/vl-ui-core/core-style.css';
+            @import '../style.css';
           </style>
         
           <slot></slot>
