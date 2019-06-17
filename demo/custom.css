@@ -1,28 +1,22 @@
-vl-column div{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 160px;
-  height: 10rem;
-  background: #ffe615;
-  border-radius: .5rem
+.presentation__grid {
+  background: #aaa;
 }
 
-vl-column p {
+.presentation__grid__col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  background: #FFE615;
+  border-radius: .5rem;
+}
+
+.presentation__grid__col p {
   display: block;
   text-align: center;
-  font-size: 20.8px;
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 1;
-  padding-left: 8px;
-  padding-left: .5rem;
-  padding-right: 8px;
-  padding-right: .5rem
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }

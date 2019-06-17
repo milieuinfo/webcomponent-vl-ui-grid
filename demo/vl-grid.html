@@ -31,61 +31,57 @@
   <h2>Grid</h2>
   <pre>
       <code class="line-numbers language-markup">
-        <div class="demo">
-          &lt;vl-grid&gt;
-            ...
-          &lt;/vl-grid&gt;
-        </div>
+        &lt;div is="vl-grid"&gt;
+          ...
+        &lt;/div&gt;
       </code>
-    </pre>
+  </pre>
 </div>
 
 <div>
   <h2>Stacking</h2>
   <p>Gebruik <strong>[is-stacked]</strong> attribute om een marge tussen de gestapelde kolommen toe
     te voegen</p>
-</div>
-<pre>
-      <code class="line-numbers language-markup">
-        <div class="demo">
-          &lt;vl-grid is-stacked&gt;
-            &lt;vl-column size="12"&gt;
-              &lt;div&gt;
-                &lt;p&gt;Stacked&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/vl-column&gt;
-            &lt;vl-column size="12"&gt;
-              &lt;div&gt;
-                &lt;p&gt;Stacked&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/vl-column&gt;
-            &lt;vl-column size="12"&gt;
-              &lt;div&gt;
-                &lt;p&gt;Stacked&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/vl-column&gt;
-          &lt;/vl-grid&gt;
+  <pre>
+    <code class="line-numbers language-markup">
+      &lt;div is="vl-grid" is-stacked&gt;
+        &lt;div is="vl-colum" size="12"&gt;
+          &lt;div&gt;
+            &lt;p&gt;Stacked&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div is="vl-colum" size="12"&gt;
+          &lt;div&gt;
+            &lt;p&gt;Stacked&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div is="vl-colum" size="12"&gt;
+          &lt;div&gt;
+            &lt;p&gt;Stacked&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code>
+  </pre>
+  <div class="demo">
+    <div is="vl-grid" is-stacked>
+      <div is="vl-column" size="12">
+        <div class="presentation__grid__col">
+          <p>Stacked</p>
         </div>
-      </code>
-    </pre>
-<div class="demo">
-  <vl-grid is-stacked>
-    <vl-column size="12">
-      <div>
-        <p>Stacked</p>
       </div>
-    </vl-column>
-    <vl-column size="12">
-      <div>
-        <p>Stacked</p>
+      <div is="vl-column" size="12">
+        <div class="presentation__grid__col">
+          <p>Stacked</p>
+        </div>
       </div>
-    </vl-column>
-    <vl-column size="12">
-      <div>
-        <p>Stacked</p>
+      <div is="vl-column" size="12">
+        <div class="presentation__grid__col">
+          <p>Stacked</p>
+        </div>
       </div>
-    </vl-column>
-  </vl-grid>
+    </div>
+  </div>
 </div>
 
 <div>
@@ -99,58 +95,58 @@
   <pre>
       <code class="line-numbers language-markup">
         <div class="demo">
-          &lt;vl-grid&gt;
-            &lt;vl-column size="4"&gt;
+          &lt;div is="vl-grid"&gt;
+            &lt;div is="vl-colum" size="4"&gt;
               &lt;div&gt;
                 &lt;p&gt;4/12 breedte&lt;/p&gt;
               &lt;/div&gt;
-            &lt;/vl-column&gt;
-          &lt;/vl-grid&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
         </div>
       </code>
     </pre>
   <div class="demo">
-    <vl-grid>
-      <vl-column size="4">
-        <div>
+    <div is="vl-grid">
+      <div is="vl-column" size="4">
+        <div class="presentation__grid__col">
           <p>4/12 breedte</p>
         </div>
-      </vl-column>
-    </vl-grid>
+      </div>
+    </div>
   </div>
 
   <p>De default max-size overschrijven</p>
   <pre>
     <code class="line-numbers language-markup">
       <div class="demo">
-        &lt;vl-grid&gt;
-          &lt;vl-column size="3" max-size="4"&gt;
+        &lt;div is="vl-grid"&gt;
+          &lt;div is="vl-colum" size="3" max-size="4"&gt;
             &lt;div&gt;
               &lt;p&gt;3/4 breedte&lt;/p&gt;
             &lt;/div&gt;
-          &lt;/vl-column&gt;
-          &lt;vl-column size="1" max-size="4"&gt;
+          &lt;/div&gt;
+          &lt;div is="vl-colum" size="1" max-size="4"&gt;
             &lt;div&gt;
               &lt;p&gt;1/4 breedte&lt;/p&gt;
             &lt;/div&gt;
-          &lt;/vl-column&gt;
-        &lt;/vl-grid&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
       </div>
     </code>
   </pre>
   <div class="demo">
-    <vl-grid>
-      <vl-column size="3" max-size="4">
-        <div>
+    <div is="vl-grid">
+      <div is="vl-column" size="3" max-size="4">
+        <div class="presentation__grid__col">
           <p>3/4 breedte</p>
         </div>
-      </vl-column>
-      <vl-column size="1" max-size="4">
-        <div>
+      </div>
+      <div is="vl-column" size="1" max-size="4">
+        <div class="presentation__grid__col">
           <p>1/4 breedte</p>
         </div>
-      </vl-column>
-    </vl-grid>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -161,30 +157,24 @@
   <pre>
       <code class="line-numbers language-markup">
         <div class="demo">
-              *size="3" => .vl-col--3-12
-              *size="3" small-size="4" => .vl-col--3-4
-              *small-size="12" => .vl-col--12-12--s
-              *small-size="8" small-max-size="10" => .vl-col--8-12--s
-              *size="2" max-size="4" push="1"=> .vl-col--2-4 .vl-push--1-4
-
-          &lt;vl-grid&gt;
-            &lt;vl-column size="4" max-size="12" small-size="12" small-max-size="12"&gt;
+          &lt;div is="vl-grid"&gt;
+            &lt;div is="vl-colum" size="4" max-size="12" small-size="12" small-max-size="12"&gt;
               &lt;div&gt;
                 &lt;p&gt;4/12 breedte op groot en volledig breedte op klein&lt;/p&gt;
               &lt;/div&gt;
-            &lt;/vl-column&gt;
-          &lt;/vl-grid&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
         </div>
       </code>
     </pre>
   <div class="demo">
-    <vl-grid>
-      <vl-column size="4" max-size="12" small-size="12" small-max-size="12">
-        <div>
+    <div is="vl-grid">
+      <div is="vl-column" size="4" max-size="12" small-size="12" small-max-size="12">
+        <div class="presentation__grid__col">
           <p>4/12 breedte op groot en volledig breedte op klein</p>
         </div>
-      </vl-column>
-    </vl-grid>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -195,24 +185,24 @@
   <pre>
       <code class="line-numbers language-markup">
         <div class="demo">
-          &lt;vl-grid&gt;
-            &lt;vl-column size="4" max-size="12" push="1"&gt;
+          &lt;div is="vl-grid"&gt;
+            &lt;div is="vl-colum" size="4" max-size="12" push="1"&gt;
               &lt;div&gt;
                 &lt;p&gt;Pushed bij 1/12&lt;/p&gt;
               &lt;/div&gt;
-            &lt;/vl-column&gt;
-          &lt;/vl-grid&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
         </div>
       </code>
     </pre>
   <div class="demo">
-    <vl-grid>
-      <vl-column size="4" max-size="12" push="1">
-        <div>
+    <div is="vl-grid">
+      <div is="vl-column" size="4" max-size="12" push="1">
+        <div class="presentation__grid__col">
           <p>Pushed bij 1/12!</p>
         </div>
-      </vl-column>
-    </vl-grid>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -221,42 +211,42 @@
   <pre>
       <code class="line-numbers language-markup">
         <div class="demo">
-          &lt;vl-grid&gt;
-            &lt;vl-column size="7" max-size="12"&gt;
-              &lt;vl-grid&gt;
-                &lt;vl-column size="6" max-size="12"&gt;
+          &lt;div is="vl-grid"&gt;
+            &lt;div is="vl-colum" size="7" max-size="12"&gt;
+              &lt;div is="vl-grid"&gt;
+                &lt;div is="vl-colum" size="6" max-size="12"&gt;
                   &lt;div&gt;
                     &lt;p&gt;Helft van 7/12&lt;/p&gt;
                   &lt;/div&gt;
-                &lt;/vl-column&gt;
-                &lt;vl-column size="6" max-size="12"&gt;
+                &lt;/div&gt;
+                &lt;div is="vl-colum" size="6" max-size="12"&gt;
                   &lt;div&gt;
                     &lt;p&gt;Helft van 7/12&lt;/p&gt;
                   &lt;/div&gt;
-                &lt;/vl-column&gt;
-              &lt;/vl-grid&gt;
-            &lt;/vl-column&gt;
-          &lt;/vl-grid&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
         </div>
       </code>
     </pre>
   <div class="demo">
-    <vl-grid>
-      <vl-column size="7" max-size="12">
-        <vl-grid>
-          <vl-column size="6" max-size="12">
-            <div>
+    <div is="vl-grid">
+      <div is="vl-column" size="7" max-size="12">
+        <div is="vl-grid">
+          <div is="vl-column" size="6" max-size="12">
+            <div class="presentation__grid__col">
               <p>Helft van 7/12</p>
             </div>
-          </vl-column>
-          <vl-column size="6" max-size="12">
-            <div>
+          </div>
+          <div is="vl-column" size="6" max-size="12">
+            <div class="presentation__grid__col">
               <p>Helft van 7/12</p>
             </div>
-          </vl-column>
-        </vl-grid>
-      </vl-column>
-    </vl-grid>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

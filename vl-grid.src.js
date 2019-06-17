@@ -1,4 +1,4 @@
-import {VlElement} from "/node_modules/vl-ui-core/vl-core.js";
+import {NativeVlElement} from "/node_modules/vl-ui-core/vl-core.js";
 
 /**
  * VlGrid
@@ -8,17 +8,7 @@ import {VlElement} from "/node_modules/vl-ui-core/vl-core.js";
  * Je kan  vl-grid vergelijken met de Row element in Bootstrap.
  * @extends VlElement
  */
-export class VlGrid extends VlElement(HTMLElement) {
-  constructor(html) {
-    super(`
-          <style>
-            @import '../style.css';
-          </style>
-        
-          <slot></slot>
-    `);
-  }
-
+export class VlGrid extends NativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
     return ["is-stacked"]
   }
@@ -29,6 +19,10 @@ export class VlGrid extends VlElement(HTMLElement) {
 
   get _classPrefix() {
     return "vl-grid--";
+  }
+
+  get _stylePath() {
+      return '../style.css';
   }
 }
 
@@ -48,17 +42,7 @@ export class VlGrid extends VlElement(HTMLElement) {
  * @property {number} small-max-size - default waarde is 12
  * @property {number} push
  */
-export class VlColumn extends VlElement(HTMLElement) {
-  constructor(html) {
-    super(`
-          <style>
-            @import '../style.css';
-          </style>
-        
-          <slot></slot>
-    `);
-  }
-
+export class VlColumn extends NativeVlElement(HTMLDivElement) {
   get _defaultMaxSize() {
     return 12;
   }
@@ -105,6 +89,10 @@ export class VlColumn extends VlElement(HTMLElement) {
     return 'vl-push--';
   }
 
+  get _stylePath() {
+      return '../style.css';
+  }
+
   connectedCallback() {
     this._setClasses();
   }
@@ -146,6 +134,5 @@ export class VlColumn extends VlElement(HTMLElement) {
   }
 }
 
-customElements.define('vl-grid', VlGrid);
-customElements.define('vl-column', VlColumn);
-
+customElements.define('vl-grid', VlGrid, {extends: 'div'});
+customElements.define('vl-column', VlColumn, {extends: 'div'});
