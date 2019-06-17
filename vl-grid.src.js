@@ -10,7 +10,7 @@ import {VlElement} from "/node_modules/vl-ui-core/vl-core.js";
  */
 export class VlGrid extends VlElement(HTMLElement) {
   constructor(html) {
-    super(html ? html : `
+    super(`
           <style>
             @import '../style.css';
           </style>
@@ -43,7 +43,7 @@ export class VlGrid extends VlElement(HTMLElement) {
 
 export class VlColumn extends VlElement(HTMLElement) {
   constructor(html) {
-    super(html ? html : `
+    super(`
           <style>
             @import '../style.css';
           </style>
