@@ -1,3 +1,5 @@
 .sass-cache/
 *.css.map
 vl-grid.js
+.idea
+node_modules/
