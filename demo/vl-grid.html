@@ -93,15 +93,13 @@
   <p>De default min-size van column is 12.</p>
   <pre>
       <code class="line-numbers language-markup">
-        <div class="demo">
-          &lt;div is="vl-grid"&gt;
-            &lt;div is="vl-colum" max-size="12"&gt;
-              &lt;div&gt;
-                &lt;p&gt;12/12 breedte&lt;/p&gt;
-              &lt;/div&gt;
+        &lt;div is="vl-grid"&gt;
+          &lt;div is="vl-colum" max-size="12"&gt;
+            &lt;div&gt;
+              &lt;p&gt;12/12 breedte&lt;/p&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-        </div>
+        &lt;/div&gt;
       </code>
     </pre>
   <div class="demo">
@@ -117,15 +115,13 @@
   <p>De default max-size van column is 12.</p>
   <pre>
       <code class="line-numbers language-markup">
-        <div class="demo">
-          &lt;div is="vl-grid"&gt;
-            &lt;div is="vl-colum" size="4"&gt;
-              &lt;div&gt;
-                &lt;p&gt;4/12 breedte&lt;/p&gt;
-              &lt;/div&gt;
+        &lt;div is="vl-grid"&gt;
+          &lt;div is="vl-colum" size="4"&gt;
+            &lt;div&gt;
+              &lt;p&gt;4/12 breedte&lt;/p&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-        </div>
+        &lt;/div&gt;
       </code>
     </pre>
   <div class="demo">
@@ -141,20 +137,18 @@
   <p>De default min-size en max-size overschrijven</p>
   <pre>
     <code class="line-numbers language-markup">
-      <div class="demo">
-        &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-colum" size="3" max-size="4"&gt;
-            &lt;div&gt;
-              &lt;p&gt;3/4 breedte&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div is="vl-colum" size="1" max-size="4"&gt;
-            &lt;div&gt;
-              &lt;p&gt;1/4 breedte&lt;/p&gt;
-            &lt;/div&gt;
+      &lt;div is="vl-grid"&gt;
+        &lt;div is="vl-colum" size="3" max-size="4"&gt;
+          &lt;div&gt;
+            &lt;p&gt;3/4 breedte&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-      </div>
+        &lt;div is="vl-colum" size="1" max-size="4"&gt;
+          &lt;div&gt;
+            &lt;p&gt;1/4 breedte&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     </code>
   </pre>
   <div class="demo">
@@ -177,17 +171,16 @@
   <h2>Responsive</h2>
   <p>Geïmplementeerd:
     <strong>.col</strong> en <strong>.col--s</strong>
+  </p>
   <pre>
       <code class="line-numbers language-markup">
-        <div class="demo">
-          &lt;div is="vl-grid"&gt;
-            &lt;div is="vl-colum" size="4" max-size="12" small-size="12" small-max-size="12"&gt;
-              &lt;div&gt;
-                &lt;p&gt;4/12 breedte op groot en volledig breedte op klein&lt;/p&gt;
-              &lt;/div&gt;
+        &lt;div is="vl-grid"&gt;
+          &lt;div is="vl-colum" size="4" max-size="12" small-size="12" small-max-size="12"&gt;
+            &lt;div&gt;
+              &lt;p&gt;4/12 breedte op groot en volledig breedte op klein&lt;/p&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-        </div>
+        &lt;/div&gt;
       </code>
     </pre>
   <div class="demo">
@@ -206,15 +199,13 @@
   <p>Niet geïmplementeerd: <strong>.vl-push--reset</strong></p>
   <pre>
     <code class="line-numbers language-markup">
-      <div class="demo">
-        &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-colum" size="4" max-size="12" push="1"&gt;
-            &lt;div&gt;
-              &lt;p&gt;Pushed met 1/12&lt;/p&gt;
-            &lt;/div&gt;
+      &lt;div is="vl-grid"&gt;
+        &lt;div is="vl-colum" size="4" max-size="12" push="1"&gt;
+          &lt;div&gt;
+            &lt;p&gt;Pushed met 1/12&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-      </div>
+      &lt;/div&gt;
     </code>
   </pre>
   <div class="demo">
@@ -230,15 +221,13 @@
   <p>De default push-size</p>
   <pre>
     <code class="line-numbers language-markup">
-      <div class="demo">
-        &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-colum" size="4" max-size="12"&gt;
-            &lt;div&gt;
-              &lt;p&gt;Pushed met 0/12&lt;/p&gt;
-            &lt;/div&gt;
+      &lt;div is="vl-grid"&gt;
+        &lt;div is="vl-colum" size="4" max-size="12"&gt;
+          &lt;div&gt;
+            &lt;p&gt;Pushed met 0/12&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-      </div>
+      &lt;/div&gt;
     </code>
   </pre>
   <div class="demo">
@@ -255,27 +244,25 @@
 <div>
   <h2>Nesting columns</h2>
   <pre>
-      <code class="line-numbers language-markup">
-        <div class="demo">
+    <code class="line-numbers language-markup">
+      &lt;div is="vl-grid"&gt;
+        &lt;div is="vl-colum" size="7" max-size="12"&gt;
           &lt;div is="vl-grid"&gt;
-            &lt;div is="vl-colum" size="7" max-size="12"&gt;
-              &lt;div is="vl-grid"&gt;
-                &lt;div is="vl-colum" size="6" max-size="12"&gt;
-                  &lt;div&gt;
-                    &lt;p&gt;Helft van 7/12&lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div is="vl-colum" size="6" max-size="12"&gt;
-                  &lt;div&gt;
-                    &lt;p&gt;Helft van 7/12&lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
+            &lt;div is="vl-colum" size="6" max-size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;Helft van 7/12&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div is="vl-colum" size="6" max-size="12"&gt;
+              &lt;div&gt;
+                &lt;p&gt;Helft van 7/12&lt;/p&gt;
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-        </div>
-      </code>
-    </pre>
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code>
+  </pre>
   <div class="demo">
     <div is="vl-grid">
       <div is="vl-column" size="7" max-size="12">
