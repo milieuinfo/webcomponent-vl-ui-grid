@@ -4,8 +4,8 @@ import {NativeVlElement} from "/node_modules/vl-ui-core/vl-core.js";
  * VlGrid
  * @class
  * @classdesc
- * De grid(.vl-grid) dient om de lay-out van jouw pagina in order te brengen.
- * Je kan  vl-grid vergelijken met de Row element in Bootstrap.
+ * De grid(.vl-grid) dient om de lay-out van jouw pagina in orde te brengen.
+ * Je kan vl-grid vergelijken met de Row element in Bootstrap.
  * @extends VlElement
  */
 export class VlGrid extends NativeVlElement(HTMLDivElement) {
