@@ -30,17 +30,13 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  * VlColumn
  * @class
  * @classdesc
- * <vl-column size="3" => .vl-col--3-12
- * <vl-column size="3" small-size="4"></vl-column> => .vl-col--3-4
- * <vl-column small-size="12"></vl-column> => .vl-col--12-12--s
- * <vl-column small-size="8" small-max-size="10"></vl-column> => .vl-col--8-12--s
- * <vl-column size="2" max-size="4" push="1"></vl-column> => .vl-col--2-4 .vl-pus--1-4
+ * De parent van een VlColumn is altijd een VlGrid.
  * @extends VlElement
- * @property {number} size
- * @property {number} max-size - default waarde is 12
- * @property {number} small-size
- * @property {number} small-max-size - default waarde is 12
- * @property {number} push
+ * @property {number} size - De teller van de verdeling van grote scherm.
+ * @property {number} max-size - De noemer van de verdeling van grote scherm.
+ * @property {number} small-size - De teller van de verdeling van kleine scherm.
+ * @property {number} small-max-size - De nomer van de verdeling van kleine scherm.
+ * @property {number} push - aantal partities te verschuiven.
  */
 export class VlColumn extends NativeVlElement(HTMLDivElement) {
   static get _observedAttributes() {
