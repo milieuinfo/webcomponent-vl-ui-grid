@@ -30,7 +30,7 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  * VlColumn
  * @class
  * @classdesc
- * De parent van een VlColumn is altijd een VlGrid.
+ * De parent van een VlColumn is altijd een VlGrid. <a href="demo/vl-grid.html">Demo</a>.
  * @extends VlElement
  * @property {number} size - De teller van de verdeling van grote scherm.
  * @property {number} max-size - De noemer van de verdeling van grote scherm.
