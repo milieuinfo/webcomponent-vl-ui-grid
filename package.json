@@ -14,7 +14,7 @@
     "release:prepare:css": "replace '\\.\\./style.css' '/node_modules/vl-ui-core/core-style.css' vl-grid.js",
     "release:prepare:commit": "git add -f vl-grid.js && git commit --amend --no-edit && git pull",
     "release:testless": "np --yolo",
-    "demo": "http-server"
+    "demo": "http-server -a local.milieuinfo.be"
   },
   "repository": {
     "type": "git",
@@ -27,10 +27,10 @@
   },
   "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-grid#readme",
   "dependencies": {
-    "vl-ui-core": "1.4.1"
+    "vl-ui-core": "1.4.2"
   },
   "peerDependencies": {
-    "vl-ui-core": "^1.4.1"
+    "vl-ui-core": "^1.4.2"
   },
   "devDependencies": {
     "@govflanders/vl-ui-core": "3.7.2",
