@@ -41,8 +41,8 @@
     "uglify-js-es6": "2.8.9",
     "http-server": "0.11.1",
     "vl-ui-util": "1.0.6",
-    "vl-ui-icon": "2.0.3",
-    "vl-ui-link": "1.1.0"
+    "vl-ui-icon": "2.0.4",
+    "vl-ui-link": "1.1.1"
   },
   "publishConfig": {
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
