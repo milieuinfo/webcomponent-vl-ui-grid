@@ -10,9 +10,26 @@
 </head>
 
 <body>
+<test-fixture id="vl-region-fixture">
+  <template>
+    <section is="vl-region"></section>
+  </template>
+</test-fixture>
+<test-fixture id="vl-region-alt-fixture">
+  <template>
+    <section is="vl-region" alt></section>
+  </template>
+</test-fixture>
+
+<test-fixture id="vl-layout-fixture">
+  <template>
+    <div is="vl-layout"></div>
+  </template>
+</test-fixture>
+
 <test-fixture id="vl-grid-fixture">
   <template>
-    <div is="vl-grid"></vl-grid>
+    <div is="vl-grid"></div>
   </template>
 </test-fixture>
 
@@ -53,6 +70,25 @@
 </test-fixture>
 
 <script>
+  suite('vl-region', () => {
+    test('heeft de vl-region class', () => {
+      const element = fixture('vl-region-fixture');
+      assert.isTrue(element.classList.contains('vl-region'));
+    });
+
+    test('heeft de vl-region--alt class', () => {
+      const element = fixture('vl-region-alt-fixture');
+      assert.isTrue(element.classList.contains('vl-region--alt'));
+    })
+  });
+
+  suite('vl-layout', () => {
+    test('heeft de vl-layout class', () => {
+      const element = fixture('vl-layout-fixture');
+      assert.isTrue(element.classList.contains('vl-layout'));
+    });
+  });
+
   suite('vl-grid', () => {
     test('heeft de vl-grid class', () => {
       const element = fixture('vl-grid-fixture');

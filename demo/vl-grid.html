@@ -19,12 +19,50 @@
 
 <div>
   <h2>Region</h2>
-  <p>Niet geïmplementeerd</p>
+  <pre>
+      <code class="line-numbers language-markup">
+        &lt;section is="vl-region"&gt;
+          ...
+        &lt;/section&gt;
+      </code>
+  </pre>
+
+  <div class="demo">
+    <section is="vl-region">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas voluptatibus?</span>
+    </section>
+  </div>
+
+  <h3>Region alt</h3>
+  <pre>
+      <code class="line-numbers language-markup">
+        &lt;section is="vl-region" alt&gt;
+          ...
+        &lt;/section&gt;
+      </code>
+  </pre>
+
+  <div class="demo">
+    <section is="vl-region" alt>
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas voluptatibus?</span>
+    </section>
+  </div>
 </div>
 
 <div>
   <h2>Layout</h2>
-  <p>Niet geïmplementeerd</p>
+  <pre>
+      <code class="line-numbers language-markup">
+        &lt;div is="vl-layout"&gt;
+          ...
+        &lt;/div&gt;
+      </code>
+  </pre>
+  <div class="demo">
+    <div is="vl-layout">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas voluptatibus?</span>
+    </div>
+  </div>
 </div>
 
 <div>
@@ -36,26 +74,24 @@
         &lt;/div&gt;
       </code>
   </pre>
-</div>
 
-<div>
-  <h2>Stacking</h2>
+  <h3>Stacking</h3>
   <p>Gebruik <strong>[is-stacked]</strong> attribute om een marge tussen de gestapelde kolommen toe
     te voegen</p>
   <pre>
     <code class="line-numbers language-markup">
       &lt;div is="vl-grid" is-stacked&gt;
-        &lt;div is="vl-colum" size="12"&gt;
+        &lt;div is="vl-column" size="12"&gt;
           &lt;div&gt;
             &lt;p&gt;Stacked&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div is="vl-colum" size="12"&gt;
+        &lt;div is="vl-column" size="12"&gt;
           &lt;div&gt;
             &lt;p&gt;Stacked&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div is="vl-colum" size="12"&gt;
+        &lt;div is="vl-column" size="12"&gt;
           &lt;div&gt;
             &lt;p&gt;Stacked&lt;/p&gt;
           &lt;/div&gt;
@@ -83,8 +119,7 @@
     </div>
   </div>
 
-<div>
-  <h2>Alignment</h2>
+  <h3>Alignment</h3>
   <p>Niet geïmplementeerd</p>
 </div>
 
@@ -94,7 +129,7 @@
   <pre>
       <code class="line-numbers language-markup">
         &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-colum" max-size="12"&gt;
+          &lt;div is="vl-column" max-size="12"&gt;
             &lt;div&gt;
               &lt;p&gt;12/12 breedte&lt;/p&gt;
             &lt;/div&gt;
@@ -116,7 +151,7 @@
   <pre>
       <code class="line-numbers language-markup">
         &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-colum" size="4"&gt;
+          &lt;div is="vl-column" size="4"&gt;
             &lt;div&gt;
               &lt;p&gt;4/12 breedte&lt;/p&gt;
             &lt;/div&gt;
@@ -138,12 +173,12 @@
   <pre>
     <code class="line-numbers language-markup">
       &lt;div is="vl-grid"&gt;
-        &lt;div is="vl-colum" size="3" max-size="4"&gt;
+        &lt;div is="vl-column" size="3" max-size="4"&gt;
           &lt;div&gt;
             &lt;p&gt;3/4 breedte&lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div is="vl-colum" size="1" max-size="4"&gt;
+        &lt;div is="vl-column" size="1" max-size="4"&gt;
           &lt;div&gt;
             &lt;p&gt;1/4 breedte&lt;/p&gt;
           &lt;/div&gt;
@@ -165,17 +200,15 @@
       </div>
     </div>
   </div>
-</div>
 
-<div>
-  <h2>Responsive</h2>
+  <h3>Responsive</h3>
   <p>Geïmplementeerd:
     <strong>.col</strong> en <strong>.col--s</strong>
   </p>
   <pre>
       <code class="line-numbers language-markup">
         &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-colum" size="4" max-size="12" small-size="12" small-max-size="12"&gt;
+          &lt;div is="vl-column" size="4" max-size="12" small-size="12" small-max-size="12"&gt;
             &lt;div&gt;
               &lt;p&gt;4/12 breedte op groot en volledig breedte op klein&lt;/p&gt;
             &lt;/div&gt;
@@ -192,15 +225,13 @@
       </div>
     </div>
   </div>
-</div>
 
-<div>
-  <h2>Pushing a column</h2>
+  <h3>Pushing a column</h3>
   <p>Niet geïmplementeerd: <strong>.vl-push--reset</strong></p>
   <pre>
     <code class="line-numbers language-markup">
       &lt;div is="vl-grid"&gt;
-        &lt;div is="vl-colum" size="4" max-size="12" push="1"&gt;
+        &lt;div is="vl-column" size="4" max-size="12" push="1"&gt;
           &lt;div&gt;
             &lt;p&gt;Pushed met 1/12&lt;/p&gt;
           &lt;/div&gt;
@@ -222,7 +253,7 @@
   <pre>
     <code class="line-numbers language-markup">
       &lt;div is="vl-grid"&gt;
-        &lt;div is="vl-colum" size="4" max-size="12"&gt;
+        &lt;div is="vl-column" size="4" max-size="12"&gt;
           &lt;div&gt;
             &lt;p&gt;Pushed met 0/12&lt;/p&gt;
           &lt;/div&gt;
@@ -239,21 +270,19 @@
       </div>
     </div>
   </div>
-</div>
 
-<div>
-  <h2>Nesting columns</h2>
+  <h3>Nesting columns</h3>
   <pre>
     <code class="line-numbers language-markup">
       &lt;div is="vl-grid"&gt;
-        &lt;div is="vl-colum" size="7" max-size="12"&gt;
+        &lt;div is="vl-column" size="7" max-size="12"&gt;
           &lt;div is="vl-grid"&gt;
-            &lt;div is="vl-colum" size="6" max-size="12"&gt;
+            &lt;div is="vl-column" size="6" max-size="12"&gt;
               &lt;div&gt;
                 &lt;p&gt;Helft van 7/12&lt;/p&gt;
               &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div is="vl-colum" size="6" max-size="12"&gt;
+            &lt;div is="vl-column" size="6" max-size="12"&gt;
               &lt;div&gt;
                 &lt;p&gt;Helft van 7/12&lt;/p&gt;
               &lt;/div&gt;

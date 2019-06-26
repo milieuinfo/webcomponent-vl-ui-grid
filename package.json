@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-grid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "De grid system voor vl-ui",
   "main": "vl-grid.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "release:prepare:css": "replace '\\.\\./style.css' '/node_modules/vl-ui-core/core-style.css' vl-grid.js",
     "release:prepare:commit": "git add -f vl-grid.js && git commit --amend --no-edit && git pull",
     "release:testless": "np --yolo",
-    "demo": "http-server"
+    "demo": "http-server -a local.milieuinfo.be"
   },
   "repository": {
     "type": "git",
