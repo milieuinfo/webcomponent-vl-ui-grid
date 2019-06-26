@@ -1,4 +1,4 @@
-import {NativeVlElement} from "/node_modules/vl-ui-core/vl-core.js";
+import {NativeVlElement, define} from "/node_modules/vl-ui-core/vl-core.js";
 
 /**
  * VlGrid
@@ -100,5 +100,5 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 }
 
-customElements.define('vl-grid', VlGrid, {extends: 'div'});
-customElements.define('vl-column', VlColumn, {extends: 'div'});
+define('vl-grid', VlGrid, {extends: 'div'});
+define('vl-column', VlColumn, {extends: 'div'});
