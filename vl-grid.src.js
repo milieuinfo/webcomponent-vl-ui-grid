@@ -44,6 +44,8 @@ export class VlLayout extends NativeVlElement(HTMLDivElement) {
  * De grid(.vl-grid) dient om de lay-out van jouw pagina in orde te brengen.
  * Je kan vl-grid vergelijken met de Row element in Bootstrap. <a href="demo/vl-grid.html">Demo</a>.
  * @extends VlElement
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest">Release notes</a>
  */
 export class VlGrid extends NativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
@@ -74,6 +76,8 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  * @property {number} small-size - De teller van de verdeling van kleine scherm.
  * @property {number} small-max-size - De nomer van de verdeling van kleine scherm.
  * @property {number} push - aantal partities te verschuiven.
+ * 
+ * @version <a href="http://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest">Release notes</a>
  */
 export class VlColumn extends NativeVlElement(HTMLDivElement) {
   static get _observedAttributes() {
