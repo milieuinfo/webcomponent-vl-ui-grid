@@ -42,8 +42,12 @@ export class VlLayout extends NativeVlElement(HTMLDivElement) {
  * @class
  * @classdesc
  * De grid(.vl-grid) dient om de lay-out van jouw pagina in orde te brengen.
- * Je kan vl-grid vergelijken met de Row element in Bootstrap. <a href="demo/vl-grid.html">Demo</a>.
+ * Je kan vl-grid vergelijken met de Row element in Bootstrap.
  * @extends VlElement
+ * 
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
 export class VlGrid extends NativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
@@ -67,13 +71,17 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  * VlColumn
  * @class
  * @classdesc
- * De parent van een VlColumn is altijd een VlGrid. <a href="demo/vl-grid.html">Demo</a>.
+ * De parent van een VlColumn is altijd een VlGrid.
  * @extends VlElement
  * @property {number} size - De teller van de verdeling van grote scherm.
  * @property {number} max-size - De noemer van de verdeling van grote scherm.
  * @property {number} small-size - De teller van de verdeling van kleine scherm.
  * @property {number} small-max-size - De nomer van de verdeling van kleine scherm.
  * @property {number} push - aantal partities te verschuiven.
+ * 
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
 export class VlColumn extends NativeVlElement(HTMLDivElement) {
   static get _observedAttributes() {
