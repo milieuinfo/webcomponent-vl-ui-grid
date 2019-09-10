@@ -36,7 +36,7 @@
     "@govflanders/vl-ui-core": "3.7.2",
     "http-server": "0.11.1",
     "np": "3.0.4",
-    "replace": "1.1.0",
+    "replace": "1.1.1",
     "uglify-js-es6": "2.8.9",
     "vl-ui-icon": "2.0.6",
     "vl-ui-link": "1.1.9",
