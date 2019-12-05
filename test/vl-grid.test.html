@@ -98,6 +98,19 @@
     test('heeft de vl-grid--is-stacked class', () => {
       const element = fixture('vl-grid-is-stacked-fixture');
       assert.isTrue(element.classList.contains('vl-grid--is-stacked'));
+    });
+
+    test('krijgt de alignment classes bij zetten van attribuut', () => {
+      const element = fixture('vl-grid-fixture');
+      [
+          'align-start', 'align-center', 'align-end', 'align-space-between', 'align-space-around'
+      ].forEach(attribuut => {
+        assert.isFalse(element.classList.contains('vl-grid--' + attribuut));
+        element.setAttribute(attribuut, '');
+        assert.isTrue(element.classList.contains('vl-grid--' + attribuut));
+        element.removeAttribute(attribuut);
+        assert.isFalse(element.classList.contains('vl-grid--' + attribuut));
+      });
     })
   });
 
