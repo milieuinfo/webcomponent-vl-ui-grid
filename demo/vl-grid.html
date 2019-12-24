@@ -358,14 +358,14 @@
 
   <h3>Responsive</h3>
   <p>Geïmplementeerd:
-    <strong>.col</strong> en <strong>.col--s</strong>
+    <strong>.col</strong>, <strong>.col--s</strong> en <strong>.col--xs</strong>
   </p>
   <pre>
       <code class="line-numbers language-markup">
         &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-column" size="4" max-size="12" small-size="12" small-max-size="12"&gt;
+          &lt;div is="vl-column" size="4" max-size="12" small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12"&gt;
             &lt;div&gt;
-              &lt;p&gt;4/12 breedte op groot en volledig breedte op klein&lt;/p&gt;
+              &lt;p&gt;4/12 breedte op groot, 8/12 breedte op klein en volledige breedte op extra klein&lt;/p&gt;
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -373,9 +373,9 @@
     </pre>
   <div class="demo">
     <div is="vl-grid">
-      <div is="vl-column" size="4" max-size="12" small-size="12" small-max-size="12">
+      <div is="vl-column" size="4" max-size="12" small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12">
         <div class="presentation__grid__col">
-          <p>4/12 breedte op groot en volledig breedte op klein</p>
+          <p>4/12 breedte op groot, 8/12 breedte op klein en volledige breedte op extra klein</p>
         </div>
       </div>
     </div>

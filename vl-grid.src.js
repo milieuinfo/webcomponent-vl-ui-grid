@@ -125,7 +125,9 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  * @property {number} size - De teller van de verdeling van grote scherm.
  * @property {number} max-size - De noemer van de verdeling van grote scherm.
  * @property {number} small-size - De teller van de verdeling van kleine scherm.
- * @property {number} small-max-size - De nomer van de verdeling van kleine scherm.
+ * @property {number} small-max-size - De noemer van de verdeling van kleine scherm.
+ * @property {number} extra-small-size - De teller van de verdeling van extra kleine scherm.
+ * @property {number} extra-small-max-size - De noemer van de verdeling van extra kleine scherm.
  * @property {number} push - aantal partities te verschuiven.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
@@ -134,7 +136,7 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  */
 export class VlColumn extends NativeVlElement(HTMLDivElement) {
   static get _observedAttributes() {
-    return ['size', 'max-size', 'small-size', 'small-max-size', 'push'];
+    return ['size', 'max-size', 'small-size', 'small-max-size', 'extra-small-size', 'extra-small-max-size', 'push'];
   }
 
   get _defaultMinSize() {
@@ -158,14 +160,22 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   get _smallMaxSizeAttribute() {
-    return this.getAttribute('small-max-size') || this._defaultMaxSize;;
+    return this.getAttribute('small-max-size') || this._defaultMaxSize;
   }
 
-  get _classPrefix() {
+  get _extraSmallSizeAttribute() {
+    return this.getAttribute('extra-small-size') || this._defaultMinSize;
+  }
+
+  get _extraSmallMaxSizeAttribute() {
+    return this.getAttribute('extra-small-max-size') || this._defaultMaxSize;
+  }
+
+  get _columnClassPrefix() {
     return 'vl-col--';
   }
 
-  get _pushPrefix() {
+  get _pushClassPrefix() {
     return 'vl-push--';
   }
 
@@ -173,24 +183,71 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
       return '../style.css';
   }
 
+  static __sizeClass(minSize, maxSize, responsiveModifier) {
+    return `${minSize}-${maxSize}` + (responsiveModifier ? `--${responsiveModifier}` : '')
+  }
+
+  __changeColumnClass(oldValue, newValue) {
+    this._changeClass(this, oldValue, newValue, this._columnClassPrefix);
+  }
+
+  __changePushClass(oldValue, newValue) {
+    this._changeClass(this, oldValue, newValue, this._pushClassPrefix);
+  }
+
   _sizeChangedCallback(oldValue, newValue) {
-    this._changeClass(this, (oldValue + '-' + this._maxSizeAttribute), (newValue + '-' + this._maxSizeAttribute), this._classPrefix);
+    oldValue = oldValue || this._defaultMinSize;
+    this.__changeColumnClass(
+        VlColumn.__sizeClass(oldValue, this._maxSizeAttribute),
+        VlColumn.__sizeClass(newValue, this._maxSizeAttribute)
+    );
   }
 
   _max_sizeChangedCallback(oldValue, newValue) {
-    this._changeClass(this, (this._sizeAttribute + '-' + oldValue), (this._sizeAttribute + '-' + newValue), this._classPrefix);
+    oldValue = oldValue || this._defaultMaxSize;
+    this.__changeColumnClass(
+        VlColumn.__sizeClass(this._sizeAttribute, oldValue),
+        VlColumn.__sizeClass(this._sizeAttribute, newValue)
+    );
   }
 
   _small_sizeChangedCallback(oldValue, newValue) {
-    this._changeClass(this, (oldValue + '-' + this._smallMaxSizeAttribute + '--s'), (newValue + '-' + this._smallMaxSizeAttribute + '--s'), this._classPrefix);
+    oldValue = oldValue || this._defaultMinSize;
+    this.__changeColumnClass(
+        VlColumn.__sizeClass(oldValue, this._smallMaxSizeAttribute, 's'),
+        VlColumn.__sizeClass(newValue, this._smallMaxSizeAttribute, 's')
+    );
   }
 
   _small_max_sizeChangedCallback(oldValue, newValue) {
-    this._changeClass(this, (this._smallSizeAttribute + '-' + oldValue + '--s'), (this._smallSizeAttribute + '-' + newValue + '--s'), this._classPrefix);
+    oldValue = oldValue || this._defaultMaxSize;
+    this.__changeColumnClass(
+        VlColumn.__sizeClass(this._smallSizeAttribute, oldValue, 's'),
+        VlColumn.__sizeClass(this._smallSizeAttribute, newValue, 's')
+    );
+  }
+
+  _extra_small_sizeChangedCallback(oldValue, newValue) {
+    oldValue = oldValue || this._defaultMinSize;
+    this.__changeColumnClass(
+        VlColumn.__sizeClass(oldValue, this._extraSmallMaxSizeAttribute, 'xs'),
+        VlColumn.__sizeClass(newValue, this._extraSmallMaxSizeAttribute, 'xs')
+    );
+  }
+
+  _extra_small_max_sizeChangedCallback(oldValue, newValue) {
+    oldValue = oldValue || this._defaultMaxSize;
+    this.__changeColumnClass(
+        VlColumn.__sizeClass(this._extraSmallSizeAttribute, oldValue, 'xs'),
+        VlColumn.__sizeClass(this._extraSmallSizeAttribute, newValue, 'xs')
+    );
   }
 
   _pushChangedCallback(oldValue, newValue) {
-    this._changeClass(this, (oldValue + '-' + this._maxSizeAttribute), (newValue + '-' + this._maxSizeAttribute), this._pushPrefix);
+    this.__changePushClass(
+        VlColumn.__sizeClass(oldValue, this._maxSizeAttribute),
+        VlColumn.__sizeClass(newValue, this._maxSizeAttribute)
+    );
   }
 }
 
