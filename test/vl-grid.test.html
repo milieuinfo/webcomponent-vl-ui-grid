@@ -103,7 +103,8 @@
     test('krijgt de alignment classes bij zetten van attribuut', () => {
       const element = fixture('vl-grid-fixture');
       [
-          'align-start', 'align-center', 'align-end', 'align-space-between', 'align-space-around'
+        'align-start', 'align-center', 'align-end', 'align-space-between', 'align-space-around',
+        'v-top', 'v-center', 'v-bottom', 'v-stretch'
       ].forEach(attribuut => {
         assert.isFalse(element.classList.contains('vl-grid--' + attribuut));
         element.setAttribute(attribuut, '');
@@ -111,7 +112,7 @@
         element.removeAttribute(attribuut);
         assert.isFalse(element.classList.contains('vl-grid--' + attribuut));
       });
-    })
+    });
   });
 
   suite('vl-column', () => {

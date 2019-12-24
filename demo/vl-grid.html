@@ -120,6 +120,7 @@
   </div>
 
   <h3>Alignment</h3>
+  <h4>Horizontaal</h4>
   <p>Gebruik <strong>[align-start]</strong> attribute om een of meerdere kolommen links te aligneren. (standaard gedrag)</p>
   <p>Gebruik <strong>[align-center]</strong> attribute om een of meerdere kolommen centraal te aligneren.</p>
   <p>Gebruik <strong>[align-end]</strong> attribute om een of meerdere kolommen rechts te aligneren.</p>
@@ -129,33 +130,33 @@
     <code class="line-numbers language-markup">
       &lt;div is=&quot;vl-grid&quot; align-start&gt;
         &lt;div is=&quot;vl-column&quot; size=&quot;6&quot;&gt;
-          &lt;p&gt;I am aligned to the left, default behaviour.&lt;/p&gt;
+          &lt;p&gt;Ik ben links gealigneerd, standaard gedrag.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div is=&quot;vl-grid&quot; align-center&gt;
         &lt;div is=&quot;vl-column&quot; size=&quot;6&quot;&gt;
-          &lt;p&gt;I am aligned to the center.&lt;/p&gt;
+          &lt;p&gt;Ik ben gecentreerd.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div is=&quot;vl-grid&quot; align-end&gt;
         &lt;div is=&quot;vl-column&quot; size=&quot;6&quot;&gt;
-          &lt;p&gt;I am aligned to the right.&lt;/p&gt;
+          &lt;p&gt;Ik ben rechts gealigneerd.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div is=&quot;vl-grid&quot; align-space-between&gt;
         &lt;div is=&quot;vl-column&quot; size=&quot;4&quot;&gt;
-          &lt;p&gt;There is as much space as possible between us!&lt;/p&gt;
+          &lt;p&gt;Er is zoveel mogelijk plaats tussen ons!&lt;/p&gt;
         &lt;/div&gt;
         &lt;div is=&quot;vl-column&quot; size=&quot;4&quot;&gt;
-          &lt;p&gt;There is as much space as possible between us!&lt;/p&gt;
+          &lt;p&gt;Er is zoveel mogelijk plaats tussen ons!&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div is=&quot;vl-grid&quot; align-space-around&gt;
         &lt;div is=&quot;vl-column&quot; size=&quot;4&quot;&gt;
-          &lt;p&gt;There is as much space as possible around us!&lt;/p&gt;
+          &lt;p&gt;Er is zoveel mogelijk plaats rond ons!&lt;/p&gt;
         &lt;/div&gt;
         &lt;div is=&quot;vl-column&quot; size=&quot;4&quot;&gt;
-          &lt;p&gt;There is as much space as possible around us!&lt;/p&gt;
+          &lt;p&gt;Er is zoveel mogelijk plaats rond ons!&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     </code>
@@ -164,45 +165,113 @@
     <div is="vl-grid" align-start>
       <div is="vl-column" size="6">
         <div class="presentation__grid__col">
-          <p>I am aligned to the left, default behaviour.</p>
+          <p>Ik ben links gealigneerd, standaard gedrag.</p>
         </div>
       </div>
     </div>
     <div is="vl-grid" align-center>
       <div is="vl-column" size="6">
         <div class="presentation__grid__col">
-          <p>I am aligned to the center.</p>
+          <p>Ik ben gecentreerd.</p>
         </div>
       </div>
     </div>
     <div is="vl-grid" align-end>
       <div is="vl-column" size="6">
         <div class="presentation__grid__col">
-          <p>I am aligned to the right.</p>
+          <p>Ik ben rechts gealigneerd.</p>
         </div>
       </div>
     </div>
     <div is="vl-grid" align-space-between>
       <div is="vl-column" size="4">
         <div class="presentation__grid__col">
-          <p>There is as much space as possible between us!</p>
+          <p>Er is zoveel mogelijk plaats tussen ons!</p>
         </div>
       </div>
       <div is="vl-column" size="4">
         <div class="presentation__grid__col">
-          <p>There is as much space as possible between us!</p>
+          <p>Er is zoveel mogelijk plaats tussen ons!</p>
         </div>
       </div>
     </div>
     <div is="vl-grid" align-space-around>
       <div is="vl-column" size="4">
         <div class="presentation__grid__col">
-          <p>There is as much space as possible around us!</p>
+          <p>Er is zoveel mogelijk plaats rond ons!</p>
         </div>
       </div>
       <div is="vl-column" size="4">
         <div class="presentation__grid__col">
-          <p>There is as much space as possible around us!</p>
+          <p>Er is zoveel mogelijk plaats rond ons!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4>Verticaal</h4>
+  <p>Gebruik <strong>[v-top]</strong> attribute om een of meerdere kolommen bovenaan te aligneren. (standaard gedrag)</p>
+  <p>Gebruik <strong>[v-center]</strong> attribute om een of meerdere kolommen centraal te aligneren.</p>
+  <p>Gebruik <strong>[v-bottom]</strong> attribute om een of meerdere kolommen onderaan te aligneren.</p>
+  <p>Gebruik <strong>[v-stretch]</strong> attribute om de kolommen tot aan hun maximum hoogte te rekken.</p>
+  <pre>
+    <code class="line-numbers language-markup">
+    &lt;div is=&quot;vl-grid&quot; v-top&gt;
+      &lt;div is=&quot;vl-column&quot; size=&quot;1&quot; max-size=&quot;1&quot;&gt;
+        &lt;p&gt;Ik ben bovenaan gealigneerd, standaard gedrag.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div is=&quot;vl-grid&quot; v-center&gt;
+      &lt;div is=&quot;vl-column&quot; size=&quot;1&quot; max-size=&quot;1&quot;&gt;
+        &lt;p&gt;Ik ben gecentreerd.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div is=&quot;vl-grid&quot; v-bottom&gt;
+      &lt;div is=&quot;vl-column&quot; size=&quot;1&quot; max-size=&quot;1&quot;&gt;
+        &lt;p&gt;Ik ben onderaan gealigneerd.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div is=&quot;vl-grid&quot; v-stretch&gt;
+      &lt;div is=&quot;vl-column&quot; size=&quot;1&quot; max-size=&quot;1&quot;&gt;
+        &lt;p&gt;Ik ben uitgerekt tot de volledige hoogte van de grid.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    </code>
+  </pre>
+  <div class="demo">
+    <div class="presentation__grid" style="margin-bottom: 1rem;">
+      <div is="vl-grid" v-top style="height: 5rem;">
+        <div is="vl-column" size="1" max-size="1">
+          <div class="presentation__grid__col" style="height: 3rem;">
+            <p>Ik ben bovenaan gealigneerd, standaard gedrag.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="presentation__grid" style="margin-bottom: 1rem;">
+      <div is="vl-grid" v-center style="height: 5rem;">
+        <div is="vl-column" size="1" max-size="1">
+          <div class="presentation__grid__col" style="height: 3rem;">
+            <p>Ik ben gecentreerd.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="presentation__grid" style="margin-bottom: 1rem;">
+      <div is="vl-grid" v-bottom style="height: 5rem;">
+        <div is="vl-column" size="1" max-size="1">
+          <div class="presentation__grid__col" style="height: 3rem;">
+            <p>Ik ben onderaan gealigneerd.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="presentation__grid">
+      <div is="vl-grid"  style="height: 5rem;">
+        <div is="vl-column" size="1" max-size="1">
+          <div class="presentation__grid__col" style="height: 100%;">
+            <p>Ik ben uitgerekt tot de volledige hoogte van de grid.</p>
+          </div>
         </div>
       </div>
     </div>
