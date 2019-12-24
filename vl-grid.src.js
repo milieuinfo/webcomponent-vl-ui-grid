@@ -78,6 +78,16 @@ export class VlLayout extends NativeVlElement(HTMLDivElement) {
  * De grid(.vl-grid) dient om de lay-out van jouw pagina in orde te brengen.
  * Je kan vl-grid vergelijken met de Row element in Bootstrap.
  * @extends VlElement
+ * @property {boolean} is-stacked - Voeg marge toe tussen gestapelde kolommen.
+ * @property {boolean} align-start - Aligneer een of meerdere kolommen links.
+ * @property {boolean} align-center - Centreer een of meerdere kolommen horizontaal.
+ * @property {boolean} align-end - Aligneer een of meerdere kolommen rechts.
+ * @property {boolean} align-space-between - Laat zoveel mogelijke ruimte tussen kolommen.
+ * @property {boolean} align-space-around - Laat zoveel mogelijke ruimte rond kolommen..
+ * @property {boolean} v-top - Aligneer een of meerdere kolommen bovenaan.
+ * @property {boolean} v-center - Centreer een of meerdere kolommen verticaal.
+ * @property {boolean} v-bottom - Aligneer een of meerdere kolommen onderaan.
+ * @property {boolean} v-stretch - Rek de kolommen tot aan hun maximum hoogte.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
@@ -88,7 +98,8 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
     return [
       'is-stacked',
       'align-start', 'align-center', 'align-end',
-      'align-space-between', 'align-space-around'
+      'align-space-between', 'align-space-around',
+      'v-top', 'v-center', 'v-bottom', 'v-stretch'
     ];
   }
 
