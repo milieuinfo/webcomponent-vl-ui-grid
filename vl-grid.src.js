@@ -1,5 +1,26 @@
 import {NativeVlElement, define} from "/node_modules/vl-ui-core/vl-core.js";
 
+/**
+ * VlRegion
+ * @class
+ * @classdesc
+ * Het region element (vl-region) wordt gebruikt om secties te definiëren op je website.
+ * Het zorgt ervoor dat er consistente spacing is tussen verschillende secties beschikbaar op een pagina.
+ * Als een voorbeeld: een pagina die de modules "intro", "portfolio", "nieuws" en "contact" bevat,
+ * zal in vier verschillende regions worden gewrapped.
+ * @extends VlElement
+ * @property {boolean} alt - Maakt de achtergrond lichtgrijs.
+ * @property {boolean} no-space - Gebruik geen marges.
+ * @property {boolean} no-space-bottom - Gebruik geen marges onderaan.
+ * @property {boolean} no-space-top - Gebruik geen marges bovenaan.
+ * @property {boolean} small - Gebruik kleinere marges.
+ * @property {boolean} medium - Gebruik middelgrote marges.
+ * @property {boolean} bordered - Teken een rand.
+ *
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
+ */
 export class VlRegion extends NativeVlElement(HTMLElement) {
 
   static get _observedClassAttributes() {
@@ -19,6 +40,19 @@ export class VlRegion extends NativeVlElement(HTMLElement) {
   }
 }
 
+/**
+ * VlLayout
+ * @class
+ * @classdesc
+ * Het layout element (vl-layout) centreert uw inhoud in de viewport.
+ * Het layout element heeft een breedte van 1200px.
+ * Je kan het layout element vergelijken met het Container element in Bootstrap.
+ * @extends VlElement
+ *
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
+ * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
+ * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
+ */
 export class VlLayout extends NativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
     return [];
