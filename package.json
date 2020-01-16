@@ -47,7 +47,7 @@
     "@govflanders/vl-ui-core": "3.9.1",
     "vl-ui-icon": "^2.1.0",
     "vl-ui-link": "^1.1.10",
-    "vl-ui-util": "^3.2.5"
+    "vl-ui-util": "^3.4.1"
   },
   "publishConfig": {
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
