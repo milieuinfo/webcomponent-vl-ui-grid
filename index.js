@@ -1,3 +1,5 @@
 module.exports = { 
-    'VlGrid': require('./test/e2e/components/vl-grid')
+    Test: {
+        VlGrid: require('./test/e2e/components/vl-grid')
+    }
 }

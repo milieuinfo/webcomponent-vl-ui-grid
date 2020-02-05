@@ -1,6 +1,5 @@
 const VlGrid = require('../components/vl-grid');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlGridPage extends Page {
     async _getGrid(selector) {
