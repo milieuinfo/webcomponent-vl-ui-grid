@@ -2,12 +2,25 @@
   "name": "vl-ui-grid",
   "version": "1.1.1",
   "description": "De grid system voor vl-ui",
+  "author": "DIDM",
+  "license": "MIT",
   "main": "./src/index.js",
   "exports": {
     "require": "./index.js",
     "import": "./src/index.js",
     "node": "./index.js",
     "default": "./index.js"
+  },
+  "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-grid#readme",
+  "bugs": {
+    "url": "https://github.com/milieuinfo/webcomponent-vl-ui-grid/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-grid.git"
+  },
+  "publishConfig": {
+    "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
     "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
@@ -45,16 +58,6 @@
     "release:testless": "np --yolo",
     "demo": "http-server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-grid.git"
-  },
-  "author": "DIDM",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/milieuinfo/webcomponent-vl-ui-grid/issues"
-  },
-  "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-grid#readme",
   "dependencies": {
     "vl-ui-core": "^4.0.0"
   },
@@ -66,8 +69,5 @@
     "vl-ui-icon": "^3.0.0",
     "vl-ui-link": "^3.0.0",
     "vl-ui-util": "^4.0.1"
-  },
-  "publishConfig": {
-    "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   }
 }
