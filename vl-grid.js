@@ -22,7 +22,6 @@ import {NativeVlElement, define} from "/node_modules/vl-ui-core/vl-core.js";
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
 export class VlRegion extends NativeVlElement(HTMLElement) {
-
   static get _observedClassAttributes() {
     return ['no-space', 'no-space-bottom', 'no-space-top', 'alt', 'small', 'medium', 'bordered'];
   }
@@ -33,10 +32,6 @@ export class VlRegion extends NativeVlElement(HTMLElement) {
 
   get _classPrefix() {
     return 'vl-region--';
-  }
-
-  get _stylePath() {
-    return '/node_modules/vl-ui-grid/style.css';
   }
 }
 
@@ -64,10 +59,6 @@ export class VlLayout extends NativeVlElement(HTMLDivElement) {
 
   get _classPrefix() {
     return 'vl-layout--';
-  }
-
-  get _stylePath() {
-    return '/node_modules/vl-ui-grid/style.css';
   }
 }
 
@@ -109,10 +100,6 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
 
   get _classPrefix() {
     return 'vl-grid--';
-  }
-
-  get _stylePath() {
-      return '/node_modules/vl-ui-grid/style.css';
   }
 }
 
@@ -177,10 +164,6 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
 
   get _pushClassPrefix() {
     return 'vl-push--';
-  }
-
-  get _stylePath() {
-      return '/node_modules/vl-ui-grid/style.css';
   }
 
   static __sizeClass(minSize, maxSize, responsiveModifier) {
