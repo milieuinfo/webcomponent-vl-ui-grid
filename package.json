@@ -39,7 +39,7 @@
     "test:e2e:safari": "mocha --safari",
     "test:server:start": "http-server &",
     "release": "np",
-    "release:prepare": "npm explore vl-ui-util – npm run release-component:prepare $(pwd) grid",
+    "release:prepare": "npm explore vl-ui-util -- npm run release-component:prepare $(pwd) grid",
     "release:testless": "np --yolo",
     "demo": "http-server"
   },
