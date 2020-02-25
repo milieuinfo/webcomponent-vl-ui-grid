@@ -1,10 +1,6 @@
 const { VlElement } = require('vl-ui-core').Test;
 
 class VlRegion extends VlElement {
-    constructor(driver, selector) {
-        super(driver, selector);
-    }
-
     async hasNoSpace() {
         return this._hasClass('no-space');
     }
@@ -34,21 +30,21 @@ class VlRegion extends VlElement {
     }
 
     async _hasClass(name) {
-        return this.hasClass(`vl-region--${name}`);
+        return this.hasClass(`${this._classPrefix}${name}`);
+    }
+
+    get _classPrefix() {
+        return 'vl-region--';
     }
 }
 
 class VlLayout extends VlElement {
-    constructor(driver, selector) {
-        super(driver, selector);
+    get _classPrefix() {
+        return 'vl-layout--';
     }
 }
 
-class VlGrid extends VlElement {  
-    constructor(driver, selector) {
-        super(driver, selector);
-    }
-
+class VlGrid extends VlElement {
     async isStacked() {
         return this._hasClass('is-stacked');
     }
@@ -90,15 +86,15 @@ class VlGrid extends VlElement {
     }
 
     async _hasClass(name) {
-        return this.hasClass(`vl-grid--${name}`);
+        return this.hasClass(`${this._classPrefix}${name}`);
+    }
+
+    get _classPrefix() {
+        return 'vl-grid--';
     }
 }
 
 class VlColumn extends VlElement {
-    constructor(driver, selector) {
-        super(driver, selector);
-    }
-
     async getSize() {
         return this._getMinSize();
     }
@@ -124,46 +120,55 @@ class VlColumn extends VlElement {
     }
 
     async getPush() {
-        const classes = await this.getClassList();
-        const pushMatcher = /vl-push--(\d+)-(\d+)/;
-        const filteredClasses = classes.filter(clazz => pushMatcher.test(clazz));
-        if (filteredClasses.length > 0) {
-            const result = pushMatcher.exec(filteredClasses[0]);
-            if (result && result.length >= 2) {
-                return result[1];
-            }
-        }
+        const pushMatcher = new RegExp(`${this._pushClassPrefix}(\\d+)-\\d+`);
+        const [ pushSize ] = await this._parseMatchingClass(pushMatcher);
+        return pushSize;
     }
 
     async _getMinSize(responsiveModifier) {
-        const size = await this._getSizeAttribute(responsiveModifier);
+        const size = await this._getSize(responsiveModifier);
         if (size) {
             return size.min;
         }
     }
 
     async _getMaxSize(responsiveModifier) {
-        const size = await this._getSizeAttribute(responsiveModifier);
+        const size = await this._getSize(responsiveModifier);
         if (size) {
             return size.max;
         }
     }
 
-    async _getSizeAttribute(responsiveModifier) {
-        const classes = await this.getClassList();
-        const sizeMatcher = new RegExp('^vl-col--(\\d+)-(\\d+)' + (responsiveModifier ? `--${responsiveModifier}` : '') + '$');
-        const filteredClasses = classes.filter(clazz => sizeMatcher.test(clazz));
-        if (filteredClasses.length > 0) {
-            const result = sizeMatcher.exec(filteredClasses[0]);
-            if (result && result.length >= 3) {
-                const min = result[1];
-                const max = result[2];
-                return {
-                    min: min,
-                    max: max
-                }
-            }
+    async _getSize(responsiveModifier) {
+        const sizeMatcher = new RegExp(`^${this._columnClassPrefix}(\\d+)-(\\d+)` + (responsiveModifier ? `--${responsiveModifier}` : '') + '$');
+        const [ min, max ] = await this._parseMatchingClass(sizeMatcher);
+        return { min: min, max: max };
+    }
+
+    async _parseMatchingClass(classMatcher) {
+        const clazz = await this._getFirstMatchingClass(classMatcher.test.bind(classMatcher));
+        const result = classMatcher.exec(clazz) || [];
+        return result.slice(1);
+    }
+
+    async _getFirstMatchingClass(matcher) {
+        const classes = await this._getClasses(matcher);
+        if (classes && classes.length > 0) {
+            return classes[0];
         }
+    }
+
+    async _getClasses(matcher) {
+        const classes = await this.getClassList();
+        return classes.filter(matcher);
+    }
+
+    get _columnClassPrefix() {
+        return 'vl-col--';
+    }
+
+    get _pushClassPrefix() {
+        return 'vl-push--';
     }
 }
 

@@ -38,34 +38,57 @@ describe('vl-grid', async () => {
         return vlGridPage.load();
     });
 
-    it('alle ondersteunde opties van een grid kunnen geactiveerd worden', async () => {
+    it('men kan een grid stacked maken', async () => {
         const stackedGrid = await vlGridPage.getStackedGrid();
         await assert.eventually.isTrue(stackedGrid.isStacked());
+    });
 
+    it('men kan een grid links aligneren', async () => {
         const startAlignedGrid = await vlGridPage.getStartAlignedGrid();
         await assert.eventually.isTrue(startAlignedGrid.isHorizontallyStartAligned());
+    });
 
+    it('men kan een grid in het midden aligneren', async () => {
         const centerAlignedGrid = await vlGridPage.getCenterAlignedGrid();
         await assert.eventually.isTrue(centerAlignedGrid.isHorizontallyCenterAligned());
+    });
 
+    it('men kan een grid rechts aligneren', async () => {
         const endAlignedGrid = await vlGridPage.getEndAlignedGrid();
         await assert.eventually.isTrue(endAlignedGrid.isHorizontallyEndAligned());
+    });
 
+    it('men kan zoveel mogelijk ruimte rond kolommen laten', async () => {
         const alignedWithSpaceAroundGrid = await vlGridPage.getAlignedWithSpaceAroundGrid();
         await assert.eventually.isTrue(alignedWithSpaceAroundGrid.isHorizontallyAlignedWithSpaceAround());
+    });
 
+    it('men kan zoveel mogelijk ruimte tussen kolommen laten', async () => {
         const alignedWithSpaceBetweenGrid = await vlGridPage.getAlignedWithSpaceBetweenGrid();
         await assert.eventually.isTrue(alignedWithSpaceBetweenGrid.isHorizontallyAlignedWithSpaceBetween());
+    });
 
+    it('men kan verticaal aligneren aan de top', async () => {
         const verticallyTopAlignedGrid = await vlGridPage.getVerticallyTopAlignedGrid();
         await assert.eventually.isTrue(verticallyTopAlignedGrid.isVerticallyTopAligned());
+    });
 
+    it('men kan bovenaan aligneren', async () => {
+        const verticallyTopAlignedGrid = await vlGridPage.getVerticallyTopAlignedGrid();
+        await assert.eventually.isTrue(verticallyTopAlignedGrid.isVerticallyTopAligned());
+    });
+
+    it('men kan verticaal in het midden aligneren', async () => {
         const verticallyCenterAlignedGrid = await vlGridPage.getVerticallyCenterAlignedGrid();
         await assert.eventually.isTrue(verticallyCenterAlignedGrid.isVerticallyCenterAligned());
+    });
 
+    it('men kan onderaan aligneren', async () => {
         const verticallyBottomAlignedGrid = await vlGridPage.getVerticallyBottomAlignedGrid();
         await assert.eventually.isTrue(verticallyBottomAlignedGrid.isVerticallyBottomAligned());
+    });
 
+    it('men kan kolommen tot aan hun maximale hoogte rekken', async () => {
         const verticallyStretchedGrid = await vlGridPage.getVerticallyStretchedGrid();
         await assert.eventually.isTrue(verticallyStretchedGrid.isVerticallyStretched());
     });
