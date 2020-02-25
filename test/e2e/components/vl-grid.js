@@ -140,9 +140,13 @@ class VlColumn extends VlElement {
     }
 
     async _getSize(responsiveModifier) {
-        const sizeMatcher = new RegExp(`^${this._columnClassPrefix}(\\d+)-(\\d+)` + (responsiveModifier ? `--${responsiveModifier}` : '') + '$');
+        const sizeMatcher = new RegExp(`^${this._columnClassPrefix}(\\d+)-(\\d+)${this.__responsiveModifierClassPostfix(responsiveModifier)}\$`);
         const [ min, max ] = await this._parseMatchingClass(sizeMatcher);
         return { min: min, max: max };
+    }
+
+    __responsiveModifierClassPostfix(responsiveModifier) {
+        return responsiveModifier ? `--${responsiveModifier}` : '';
     }
 
     async _parseMatchingClass(classMatcher) {
