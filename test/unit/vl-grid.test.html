@@ -33,6 +33,12 @@
   </template>
 </test-fixture>
 
+<test-fixture id="vl-column-fixture">
+  <template>
+    <div is="vl-column"></div>
+  </template>
+</test-fixture>
+
 <test-fixture id="vl-column-3-4-fixture">
   <template>
     <div is="vl-column" size="3" max-size="4"></div>
@@ -116,6 +122,11 @@
   });
 
   suite('vl-column', () => {
+    test('standaard size en max-size wordt gezet indien er attributen geconfigureerd zijn', () => {
+      const element = fixture('vl-column-fixture');
+      assert.isTrue(element.classList.contains('vl-col--12-12'));
+    });
+
     test('class komt overeen met attributes size en max-size', () => {
       const element = fixture('vl-column-3-4-fixture');
       assert.isTrue(element.classList.contains('vl-col--3-4'));

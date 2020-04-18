@@ -76,8 +76,6 @@
   </pre>
 
   <h3>Stacking</h3>
-  <p>Gebruik <strong>[is-stacked]</strong> attribute om een marge tussen de gestapelde kolommen toe
-    te voegen</p>
   <pre>
     <code class="line-numbers language-markup">
       &lt;div is="vl-grid" is-stacked&gt;
@@ -120,12 +118,6 @@
   </div>
 
   <h3>Alignment</h3>
-  <h4>Horizontaal</h4>
-  <p>Gebruik <strong>[align-start]</strong> attribute om een of meerdere kolommen links te aligneren. (standaard gedrag)</p>
-  <p>Gebruik <strong>[align-center]</strong> attribute om een of meerdere kolommen centraal te aligneren.</p>
-  <p>Gebruik <strong>[align-end]</strong> attribute om een of meerdere kolommen rechts te aligneren.</p>
-  <p>Gebruik <strong>[align-space-between]</strong> attribute om zoveel mogelijk ruimte tussen een of meerdere kolommen te voegen.</p>
-  <p>Gebruik <strong>[align-space-around]</strong> attribute om zoveel mogelijk ruimte rond een of meerdere kolommen te voegen.</p>
   <pre>
     <code class="line-numbers language-markup">
       &lt;div is=&quot;vl-grid&quot; align-start&gt;
@@ -209,10 +201,6 @@
     </div>
   </div>
   <h4>Verticaal</h4>
-  <p>Gebruik <strong>[v-top]</strong> attribute om een of meerdere kolommen bovenaan te aligneren. (standaard gedrag)</p>
-  <p>Gebruik <strong>[v-center]</strong> attribute om een of meerdere kolommen centraal te aligneren.</p>
-  <p>Gebruik <strong>[v-bottom]</strong> attribute om een of meerdere kolommen onderaan te aligneren.</p>
-  <p>Gebruik <strong>[v-stretch]</strong> attribute om de kolommen tot aan hun maximum hoogte te rekken.</p>
   <pre>
     <code class="line-numbers language-markup">
     &lt;div is=&quot;vl-grid&quot; v-top&gt;
@@ -280,11 +268,10 @@
 
 <div>
   <h2>Columns</h2>
-  <p>De default min-size van column is 12.</p>
   <pre>
       <code class="line-numbers language-markup">
         &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-column" max-size="12"&gt;
+          &lt;div is="vl-column"&gt;
             &lt;div&gt;
               &lt;p&gt;12/12 breedte&lt;/p&gt;
             &lt;/div&gt;
@@ -294,7 +281,7 @@
     </pre>
   <div class="demo">
     <div is="vl-grid">
-      <div id="vl-column-default-size" is="vl-column" max-size="12">
+      <div id="vl-column-default-size" is="vl-column">
         <div class="presentation__grid__col">
           <p>12/12 breedte</p>
         </div>
@@ -302,7 +289,6 @@
     </div>
   </div>
 
-  <p>De default max-size van column is 12.</p>
   <pre>
       <code class="line-numbers language-markup">
         &lt;div is="vl-grid"&gt;
@@ -324,7 +310,6 @@
     </div>
   </div>
 
-  <p>De default min-size en max-size overschrijven</p>
   <pre>
     <code class="line-numbers language-markup">
       &lt;div is="vl-grid"&gt;
