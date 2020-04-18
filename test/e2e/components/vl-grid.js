@@ -103,6 +103,14 @@ class VlColumn extends VlElement {
         return this._getMaxSize()
     }
 
+    async getMediumSize() {
+        return this._getMinSize('m');
+    }
+
+    async getMediumMaxSize() {
+        return this._getMaxSize('m');
+    }
+
     async getSmallSize() {
         return this._getMinSize('s');
     }

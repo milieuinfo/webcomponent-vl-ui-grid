@@ -123,15 +123,11 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  */
 export class VlColumn extends NativeVlElement(HTMLDivElement) {
   static get _observedAttributes() {
-    return ['size', 'max-size', 'small-size', 'small-max-size', 'extra-small-size', 'extra-small-max-size', 'push'];
+    return ['size', 'max-size', 'medium-size', 'medium-max-size', 'small-size', 'small-max-size', 'extra-small-size', 'extra-small-max-size', 'push'];
   }
 
   connectedCallback() {
     this._configureDefaults();
-  }
-
-  get _defaultMinSize() {
-    return 12;
   }
 
   get _defaultMaxSize() {
@@ -139,15 +135,23 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   get _sizeAttribute() {
-    return this.getAttribute('size') || this._defaultMinSize;
+    return this.getAttribute('size') || 8;
   }
 
   get _maxSizeAttribute() {
     return this.getAttribute('max-size') || this._defaultMaxSize;
   }
 
+  get _mediumSizeAttribute() {
+    return this.getAttribute('medium-size') || 10;
+  }
+
+  get _mediumMaxSizeAttribute() {
+    return this.getAttribute('medium-max-size') || this._defaultMaxSize;
+  }
+
   get _smallSizeAttribute() {
-    return this.getAttribute('small-size') || this._defaultMinSize;
+    return this.getAttribute('small-size') || 12;
   }
 
   get _smallMaxSizeAttribute() {
@@ -155,7 +159,7 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   get _extraSmallSizeAttribute() {
-    return this.getAttribute('extra-small-size') || this._defaultMinSize;
+    return this.getAttribute('extra-small-size') || 12;
   }
 
   get _extraSmallMaxSizeAttribute() {
@@ -183,7 +187,6 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   _sizeChangedCallback(oldValue, newValue) {
-    oldValue = oldValue || this._defaultMinSize;
     this.__changeColumnClass(
         VlColumn.__sizeClass(oldValue, this._maxSizeAttribute),
         VlColumn.__sizeClass(newValue, this._maxSizeAttribute)
@@ -198,8 +201,22 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
     );
   }
 
+  _medium_sizeChangedCallback(oldValue, newValue) {
+    this.__changeColumnClass(
+        VlColumn.__sizeClass(oldValue, this._mediumMaxSizeAttribute, 'm'),
+        VlColumn.__sizeClass(newValue, this._mediumMaxSizeAttribute, 'm')
+    );
+  }
+
+  _medium_max_sizeChangedCallback(oldValue, newValue) {
+    oldValue = oldValue || this._defaultMaxSize;
+    this.__changeColumnClass(
+        VlColumn.__sizeClass(this._mediumSizeAttribute, oldValue, 'm'),
+        VlColumn.__sizeClass(this._mediumSizeAttribute, newValue, 'm')
+    );
+  }
+
   _small_sizeChangedCallback(oldValue, newValue) {
-    oldValue = oldValue || this._defaultMinSize;
     this.__changeColumnClass(
         VlColumn.__sizeClass(oldValue, this._smallMaxSizeAttribute, 's'),
         VlColumn.__sizeClass(newValue, this._smallMaxSizeAttribute, 's')
@@ -215,7 +232,6 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   _extra_small_sizeChangedCallback(oldValue, newValue) {
-    oldValue = oldValue || this._defaultMinSize;
     this.__changeColumnClass(
         VlColumn.__sizeClass(oldValue, this._extraSmallMaxSizeAttribute, 'xs'),
         VlColumn.__sizeClass(newValue, this._extraSmallMaxSizeAttribute, 'xs')
@@ -242,8 +258,16 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
       this._sizeChangedCallback(null, this._sizeAttribute);
     }
 
-    if (!this.hasAttribute('max-size')) {
-      this._max_sizeChangedCallback(null, this._maxSizeAttribute);
+    if (!this.hasAttribute('medium-size')) {
+      this._medium_sizeChangedCallback(null, this._mediumSizeAttribute);
+    }
+
+    if (!this.hasAttribute('small-size')) {
+      this._small_sizeChangedCallback(null, this._smallSizeAttribute);
+    }
+
+    if (!this.hasAttribute('medium-size')) {
+      this._extra_small_sizeChangedCallback(null, this._extraSmallSizeAttribute);
     }
   }
 }
