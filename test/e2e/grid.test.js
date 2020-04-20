@@ -103,26 +103,32 @@ describe('vl-column', async () => {
 
     it('men kan er op vertrouwen dat er default sizes worden gekozen', async () => {
         const defaultSizeColumn = await vlGridPage.getColumnWithDefaultSize();
-        await assert.eventually.equal(defaultSizeColumn.getSize(), 12);
+        await assert.eventually.equal(defaultSizeColumn.getSize(), 8);
         await assert.eventually.equal(defaultSizeColumn.getMaxSize(), 12);
-        await assert.eventually.isUndefined(defaultSizeColumn.getSmallSize());
-        await assert.eventually.isUndefined(defaultSizeColumn.getSmallMaxSize());
-        await assert.eventually.isUndefined(defaultSizeColumn.getExtraSmallSize());
-        await assert.eventually.isUndefined(defaultSizeColumn.getExtraSmallMaxSize());
+        await assert.eventually.equal(defaultSizeColumn.getMediumSize(), 10);
+        await assert.eventually.equal(defaultSizeColumn.getMediumMaxSize(), 12);
+        await assert.eventually.equal(defaultSizeColumn.getSmallSize(), 12);
+        await assert.eventually.equal(defaultSizeColumn.getSmallMaxSize(), 12);
+        await assert.eventually.equal(defaultSizeColumn.getExtraSmallSize(), 12);
+        await assert.eventually.equal(defaultSizeColumn.getExtraSmallMaxSize(), 12);
 
         const defaultMaxSizeColumn = await vlGridPage.getColumnWithDefaultMaxSize();
         await assert.eventually.equal(defaultMaxSizeColumn.getSize(), 4);
         await assert.eventually.equal(defaultMaxSizeColumn.getMaxSize(), 12);
-        await assert.eventually.isUndefined(defaultMaxSizeColumn.getSmallSize());
-        await assert.eventually.isUndefined(defaultMaxSizeColumn.getSmallMaxSize());
-        await assert.eventually.isUndefined(defaultMaxSizeColumn.getExtraSmallSize());
-        await assert.eventually.isUndefined(defaultMaxSizeColumn.getExtraSmallMaxSize());
+        await assert.eventually.equal(defaultMaxSizeColumn.getMediumSize(), 10);
+        await assert.eventually.equal(defaultMaxSizeColumn.getMediumMaxSize(), 12);
+        await assert.eventually.equal(defaultMaxSizeColumn.getSmallSize(), 12);
+        await assert.eventually.equal(defaultMaxSizeColumn.getSmallMaxSize(), 12);
+        await assert.eventually.equal(defaultMaxSizeColumn.getExtraSmallSize(), 12);
+        await assert.eventually.equal(defaultMaxSizeColumn.getExtraSmallMaxSize(), 12);
     });
 
     it('men kan responsive sizes instellen', async () => {
         const column = await vlGridPage.getColumnWithResponsiveSizes();
         await assert.eventually.equal(column.getSize(), 4);
         await assert.eventually.equal(column.getMaxSize(), 12);
+        await assert.eventually.equal(column.getMediumSize(), 6);
+        await assert.eventually.equal(column.getMediumMaxSize(), 12);
         await assert.eventually.equal(column.getSmallSize(), 8);
         await assert.eventually.equal(column.getSmallMaxSize(), 12);
         await assert.eventually.equal(column.getExtraSmallSize(), 12);
