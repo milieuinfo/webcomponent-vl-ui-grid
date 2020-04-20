@@ -39,6 +39,30 @@
     </template>
   </test-fixture>
 
+  <test-fixture id="vl-column-size-fixture">
+    <template>
+      <div is="vl-column" size="1"></div>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-column-medium-size-fixture">
+    <template>
+      <div is="vl-column" medium-size="1"></div>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-column-small-size-fixture">
+    <template>
+      <div is="vl-column" small-size="1"></div>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-column-extra-small-size-fixture">
+    <template>
+      <div is="vl-column" extra-small-size="1"></div>
+    </template>
+  </test-fixture>
+
   <test-fixture id="vl-column-3-4-fixture">
     <template>
       <div is="vl-column" size="3" max-size="4"></div>
@@ -123,11 +147,13 @@
 
     suite('vl-column', () => {
       test('standaard size en max-size wordt gezet indien er geen attributen geconfigureerd zijn', () => {
-        const element = fixture('vl-column-fixture');
-        assert.isTrue(element.classList.contains('vl-col--8-12'));
-        assert.isTrue(element.classList.contains('vl-col--10-12--m'));
-        assert.isTrue(element.classList.contains('vl-col--12-12--s'));
-        assert.isTrue(element.classList.contains('vl-col--12-12--xs'));
+        ['vl-column-fixture', 'vl-column-size-fixture', 'vl-column-medium-size-fixture', 'vl-column-small-size-fixture', 'vl-column-extra-small-size-fixture'].forEach((id) => {
+          const element = fixture(id);
+          assert.isTrue(element.classList.contains(`vl-col--${element.getAttribute('size') || 8}-12`));
+          assert.isTrue(element.classList.contains(`vl-col--${element.getAttribute('medium-size') || 10}-12--m`));
+          assert.isTrue(element.classList.contains(`vl-col--${element.getAttribute('small-size') || 12}-12--s`));
+          assert.isTrue(element.classList.contains(`vl-col--${element.getAttribute('extra-small-size') || 12}-12--xs`));
+        })
       });
 
       test('class komt overeen met attributes size en max-size', () => {
@@ -164,7 +190,7 @@
 
       test('class komt overeen met attributes size, small-size, extra-small-size, max-size, small-max-size en extra-small-max-size na aanpassingen aan desbetreffende attributes', () => {
         const element = fixture('vl-column-responsive-fixture');
-        
+
         // normal
         assert.isTrue(element.classList.contains('vl-col--3-12'));
         element.setAttribute('size', 1);

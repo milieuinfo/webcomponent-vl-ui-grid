@@ -266,7 +266,7 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
       this._small_sizeChangedCallback(null, this._smallSizeAttribute);
     }
 
-    if (!this.hasAttribute('medium-size')) {
+    if (!this.hasAttribute('extra-small--size')) {
       this._extra_small_sizeChangedCallback(null, this._extraSmallSizeAttribute);
     }
   }
