@@ -1,4 +1,4 @@
-import {NativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import { NativeVlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * VlRegion
@@ -134,35 +134,35 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
     return 12;
   }
 
-  get _sizeAttribute() {
+  get _size() {
     return this.getAttribute('size') || 8;
   }
 
-  get _maxSizeAttribute() {
+  get _maxSize() {
     return this.getAttribute('max-size') || this._defaultMaxSize;
   }
 
-  get _mediumSizeAttribute() {
+  get _mediumSize() {
     return this.getAttribute('medium-size') || 10;
   }
 
-  get _mediumMaxSizeAttribute() {
+  get _mediumMaxSize() {
     return this.getAttribute('medium-max-size') || this._defaultMaxSize;
   }
 
-  get _smallSizeAttribute() {
+  get _smallSize() {
     return this.getAttribute('small-size') || 12;
   }
 
-  get _smallMaxSizeAttribute() {
+  get _smallMaxSize() {
     return this.getAttribute('small-max-size') || this._defaultMaxSize;
   }
 
-  get _extraSmallSizeAttribute() {
+  get _extraSmallSize() {
     return this.getAttribute('extra-small-size') || 12;
   }
 
-  get _extraSmallMaxSizeAttribute() {
+  get _extraSmallMaxSize() {
     return this.getAttribute('extra-small-max-size') || this._defaultMaxSize;
   }
 
@@ -187,92 +187,65 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   _sizeChangedCallback(oldValue, newValue) {
-    this.__changeColumnClass(
-        VlColumn.__sizeClass(oldValue, this._maxSizeAttribute),
-        VlColumn.__sizeClass(newValue, this._maxSizeAttribute)
-    );
+    this.__changeColumnClass(VlColumn.__sizeClass(oldValue, this._maxSize), VlColumn.__sizeClass(newValue, this._maxSize));
   }
 
   _max_sizeChangedCallback(oldValue, newValue) {
     oldValue = oldValue || this._defaultMaxSize;
-    this.__changeColumnClass(
-        VlColumn.__sizeClass(this._sizeAttribute, oldValue),
-        VlColumn.__sizeClass(this._sizeAttribute, newValue)
-    );
+    this.__changeColumnClass(VlColumn.__sizeClass(this._size, oldValue), VlColumn.__sizeClass(this._size, newValue));
   }
 
   _medium_sizeChangedCallback(oldValue, newValue) {
-    this.__changeColumnClass(
-        VlColumn.__sizeClass(oldValue, this._mediumMaxSizeAttribute, 'm'),
-        VlColumn.__sizeClass(newValue, this._mediumMaxSizeAttribute, 'm')
-    );
+    this.__changeColumnClass(VlColumn.__sizeClass(oldValue, this._mediumMaxSize, 'm'), VlColumn.__sizeClass(newValue, this._mediumMaxSize, 'm'));
   }
 
   _medium_max_sizeChangedCallback(oldValue, newValue) {
     oldValue = oldValue || this._defaultMaxSize;
-    this.__changeColumnClass(
-        VlColumn.__sizeClass(this._mediumSizeAttribute, oldValue, 'm'),
-        VlColumn.__sizeClass(this._mediumSizeAttribute, newValue, 'm')
-    );
+    this.__changeColumnClass(VlColumn.__sizeClass(this._mediumSize, oldValue, 'm'), VlColumn.__sizeClass(this._mediumSize, newValue, 'm'));
   }
 
   _small_sizeChangedCallback(oldValue, newValue) {
-    this.__changeColumnClass(
-        VlColumn.__sizeClass(oldValue, this._smallMaxSizeAttribute, 's'),
-        VlColumn.__sizeClass(newValue, this._smallMaxSizeAttribute, 's')
-    );
+    this.__changeColumnClass(VlColumn.__sizeClass(oldValue, this._smallMaxSize, 's'), VlColumn.__sizeClass(newValue, this._smallMaxSize, 's'));
   }
 
   _small_max_sizeChangedCallback(oldValue, newValue) {
     oldValue = oldValue || this._defaultMaxSize;
-    this.__changeColumnClass(
-        VlColumn.__sizeClass(this._smallSizeAttribute, oldValue, 's'),
-        VlColumn.__sizeClass(this._smallSizeAttribute, newValue, 's')
-    );
+    this.__changeColumnClass(VlColumn.__sizeClass(this._smallSize, oldValue, 's'), VlColumn.__sizeClass(this._smallSize, newValue, 's'));
   }
 
   _extra_small_sizeChangedCallback(oldValue, newValue) {
-    this.__changeColumnClass(
-        VlColumn.__sizeClass(oldValue, this._extraSmallMaxSizeAttribute, 'xs'),
-        VlColumn.__sizeClass(newValue, this._extraSmallMaxSizeAttribute, 'xs')
-    );
+    this.__changeColumnClass(VlColumn.__sizeClass(oldValue, this._extraSmallMaxSize, 'xs'), VlColumn.__sizeClass(newValue, this._extraSmallMaxSize, 'xs'));
   }
 
   _extra_small_max_sizeChangedCallback(oldValue, newValue) {
     oldValue = oldValue || this._defaultMaxSize;
-    this.__changeColumnClass(
-        VlColumn.__sizeClass(this._extraSmallSizeAttribute, oldValue, 'xs'),
-        VlColumn.__sizeClass(this._extraSmallSizeAttribute, newValue, 'xs')
-    );
+    this.__changeColumnClass(VlColumn.__sizeClass(this._extraSmallSize, oldValue, 'xs'), VlColumn.__sizeClass(this._extraSmallSize, newValue, 'xs'));
   }
 
   _pushChangedCallback(oldValue, newValue) {
-    this.__changePushClass(
-        VlColumn.__sizeClass(oldValue, this._maxSizeAttribute),
-        VlColumn.__sizeClass(newValue, this._maxSizeAttribute)
-    );
+    this.__changePushClass(VlColumn.__sizeClass(oldValue, this._maxSize), VlColumn.__sizeClass(newValue, this._maxSize));
   }
 
   _configureDefaults() {
     if (!this.hasAttribute('size')) {
-      this._sizeChangedCallback(null, this._sizeAttribute);
+      this._sizeChangedCallback(null, this._size);
     }
 
     if (!this.hasAttribute('medium-size')) {
-      this._medium_sizeChangedCallback(null, this._mediumSizeAttribute);
+      this._medium_sizeChangedCallback(null, this._mediumSize);
     }
 
     if (!this.hasAttribute('small-size')) {
-      this._small_sizeChangedCallback(null, this._smallSizeAttribute);
+      this._small_sizeChangedCallback(null, this._smallSize);
     }
 
     if (!this.hasAttribute('extra-small--size')) {
-      this._extra_small_sizeChangedCallback(null, this._extraSmallSizeAttribute);
+      this._extra_small_sizeChangedCallback(null, this._extraSmallSize);
     }
   }
 }
 
-define('vl-region', VlRegion, {extends: 'section'});
-define('vl-layout', VlLayout, {extends: 'div'});
-define('vl-grid', VlGrid, {extends: 'div'});
-define('vl-column', VlColumn, {extends: 'div'});
+define('vl-region', VlRegion, { extends: 'section' });
+define('vl-layout', VlLayout, { extends: 'div' });
+define('vl-grid', VlGrid, { extends: 'div' });
+define('vl-column', VlColumn, { extends: 'div' });
