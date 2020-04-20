@@ -126,6 +126,10 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
     return ['size', 'max-size', 'small-size', 'small-max-size', 'extra-small-size', 'extra-small-max-size', 'push'];
   }
 
+  connectedCallback() {
+    this._configureDefaults();
+  }
+
   get _defaultMinSize() {
     return 12;
   }
@@ -231,6 +235,16 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
         VlColumn.__sizeClass(oldValue, this._maxSizeAttribute),
         VlColumn.__sizeClass(newValue, this._maxSizeAttribute)
     );
+  }
+
+  _configureDefaults() {
+    if (!this.hasAttribute('size')) {
+      this._sizeChangedCallback(null, this._sizeAttribute);
+    }
+
+    if (!this.hasAttribute('max-size')) {
+      this._max_sizeChangedCallback(null, this._maxSizeAttribute);
+    }
   }
 }
 
