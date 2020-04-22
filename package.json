@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@govflanders/vl-ui-core": "3.9.1",
-    "vl-ui-icon": "^4.0.0",
+    "vl-ui-icon": "^5.0.0",
     "vl-ui-link": "^4.0.0",
     "vl-ui-util": "^5.1.6"
   }
