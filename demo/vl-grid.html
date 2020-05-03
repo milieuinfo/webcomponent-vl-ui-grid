@@ -1,453 +1,240 @@
 <!DOCTYPE html>
 <html lang="nl" xmlns="http://www.w3.org/1999/html">
+
 <head>
-  <title>vl-grid voorbeeld</title>
-  <script type="module" src="demo.js"></script>
-  <script type="module" src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-  <script type="module" src="/src/vl-grid.js"></script>
-  
-  <link rel="stylesheet" href="/demo/custom.css"/>
-  <link rel="stylesheet" href="/src/style.css"/>
+    <title>vl-grid voorbeeld</title>
+    <script type="module" src="/src/vl-grid.js"></script>
+    <script type="module" src="/node_modules/vl-ui-demo/dist/vl-demo-all.js"></script>
+
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/demo/custom.css" />
 </head>
 
 <body>
-<h1>vl-ui-grid demo</h1>
-<p>
-  <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/grid/">Meer
-    voorbeelden en documentatie</a>
-</p>
+    <vl-demo-page data-vl-webcomponent="vl-grid"
+        data-vl-link="https://overheid.vlaanderen.be/webuniversum/v3/documentation/grid">
+        <vl-demo data-vl-title="Region">
+            <section id="region" is="vl-region">
+                <span>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est
+                    eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas
+                    voluptatibus?
+                </span>
+            </section>
+        </vl-demo>
 
-<div>
-  <h2>Region</h2>
-  <pre>
-      <code class="line-numbers language-markup">
-        &lt;section is="vl-region"&gt;
-          ...
-        &lt;/section&gt;
-      </code>
-  </pre>
+        <vl-demo data-vl-title="Region alt">
+            <section id="region-alt" is="vl-region" alt>
+                <span>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est
+                    eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas
+                    voluptatibus?
+                </span>
+            </section>
+        </vl-demo>
 
-  <div class="demo">
-    <section id="region" is="vl-region">
-      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas voluptatibus?</span>
-    </section>
-  </div>
-
-  <h3>Region alt</h3>
-  <pre>
-      <code class="line-numbers language-markup">
-        &lt;section is="vl-region" alt&gt;
-          ...
-        &lt;/section&gt;
-      </code>
-  </pre>
-
-  <div class="demo">
-    <section id="region-alt" is="vl-region" alt>
-      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas voluptatibus?</span>
-    </section>
-  </div>
-</div>
-
-<div>
-  <h2>Layout</h2>
-  <pre>
-      <code class="line-numbers language-markup">
-        &lt;div is="vl-layout"&gt;
-          ...
-        &lt;/div&gt;
-      </code>
-  </pre>
-  <div class="demo">
-    <div id="layout" is="vl-layout">
-      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas voluptatibus?</span>
-    </div>
-  </div>
-</div>
-
-<div>
-  <h2>Grid</h2>
-  <pre>
-      <code class="line-numbers language-markup">
-        &lt;div is="vl-grid"&gt;
-          ...
-        &lt;/div&gt;
-      </code>
-  </pre>
-
-  <h3>Stacking</h3>
-  <pre>
-    <code class="line-numbers language-markup">
-      &lt;div is="vl-grid" is-stacked&gt;
-        &lt;div is="vl-column" size="12"&gt;
-          &lt;div&gt;
-            &lt;p&gt;Stacked&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div is="vl-column" size="12"&gt;
-          &lt;div&gt;
-            &lt;p&gt;Stacked&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div is="vl-column" size="12"&gt;
-          &lt;div&gt;
-            &lt;p&gt;Stacked&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    </code>
-  </pre>
-  <div class="demo">
-    <div id="grid-stacking" is="vl-grid" is-stacked>
-      <div is="vl-column" size="12">
-        <div class="presentation__grid__col">
-          <p>Stacked</p>
-        </div>
-      </div>
-      <div is="vl-column" size="12">
-        <div class="presentation__grid__col">
-          <p>Stacked</p>
-        </div>
-      </div>
-      <div is="vl-column" size="12">
-        <div class="presentation__grid__col">
-          <p>Stacked</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h3>Alignment</h3>
-  <pre>
-    <code class="line-numbers language-markup">
-      &lt;div is=&quot;vl-grid&quot; align-start&gt;
-        &lt;div is=&quot;vl-column&quot; size=&quot;6&quot;&gt;
-          &lt;p&gt;Ik ben links gealigneerd, standaard gedrag.&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div is=&quot;vl-grid&quot; align-center&gt;
-        &lt;div is=&quot;vl-column&quot; size=&quot;6&quot;&gt;
-          &lt;p&gt;Ik ben gecentreerd.&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div is=&quot;vl-grid&quot; align-end&gt;
-        &lt;div is=&quot;vl-column&quot; size=&quot;6&quot;&gt;
-          &lt;p&gt;Ik ben rechts gealigneerd.&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div is=&quot;vl-grid&quot; align-space-between&gt;
-        &lt;div is=&quot;vl-column&quot; size=&quot;4&quot;&gt;
-          &lt;p&gt;Er is zoveel mogelijk plaats tussen ons!&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div is=&quot;vl-column&quot; size=&quot;4&quot;&gt;
-          &lt;p&gt;Er is zoveel mogelijk plaats tussen ons!&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div is=&quot;vl-grid&quot; align-space-around&gt;
-        &lt;div is=&quot;vl-column&quot; size=&quot;4&quot;&gt;
-          &lt;p&gt;Er is zoveel mogelijk plaats rond ons!&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div is=&quot;vl-column&quot; size=&quot;4&quot;&gt;
-          &lt;p&gt;Er is zoveel mogelijk plaats rond ons!&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    </code>
-  </pre>
-  <div class="demo">
-    <div id="grid-align-start" is="vl-grid" align-start>
-      <div is="vl-column" size="6">
-        <div class="presentation__grid__col">
-          <p>Ik ben links gealigneerd, standaard gedrag.</p>
-        </div>
-      </div>
-    </div>
-    <div id="grid-align-center" is="vl-grid" align-center>
-      <div is="vl-column" size="6">
-        <div class="presentation__grid__col">
-          <p>Ik ben gecentreerd.</p>
-        </div>
-      </div>
-    </div>
-    <div id="grid-align-end" is="vl-grid" align-end>
-      <div is="vl-column" size="6">
-        <div class="presentation__grid__col">
-          <p>Ik ben rechts gealigneerd.</p>
-        </div>
-      </div>
-    </div>
-    <div id="grid-align-space-between" is="vl-grid" align-space-between>
-      <div is="vl-column" size="4">
-        <div class="presentation__grid__col">
-          <p>Er is zoveel mogelijk plaats tussen ons!</p>
-        </div>
-      </div>
-      <div is="vl-column" size="4">
-        <div class="presentation__grid__col">
-          <p>Er is zoveel mogelijk plaats tussen ons!</p>
-        </div>
-      </div>
-    </div>
-    <div id="grid-align-space-around" is="vl-grid" align-space-around>
-      <div is="vl-column" size="4">
-        <div class="presentation__grid__col">
-          <p>Er is zoveel mogelijk plaats rond ons!</p>
-        </div>
-      </div>
-      <div is="vl-column" size="4">
-        <div class="presentation__grid__col">
-          <p>Er is zoveel mogelijk plaats rond ons!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h4>Verticaal</h4>
-  <pre>
-    <code class="line-numbers language-markup">
-    &lt;div is=&quot;vl-grid&quot; v-top&gt;
-      &lt;div is=&quot;vl-column&quot; size=&quot;1&quot; max-size=&quot;1&quot;&gt;
-        &lt;p&gt;Ik ben bovenaan gealigneerd, standaard gedrag.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div is=&quot;vl-grid&quot; v-center&gt;
-      &lt;div is=&quot;vl-column&quot; size=&quot;1&quot; max-size=&quot;1&quot;&gt;
-        &lt;p&gt;Ik ben gecentreerd.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div is=&quot;vl-grid&quot; v-bottom&gt;
-      &lt;div is=&quot;vl-column&quot; size=&quot;1&quot; max-size=&quot;1&quot;&gt;
-        &lt;p&gt;Ik ben onderaan gealigneerd.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div is=&quot;vl-grid&quot; v-stretch&gt;
-      &lt;div is=&quot;vl-column&quot; size=&quot;1&quot; max-size=&quot;1&quot;&gt;
-        &lt;p&gt;Ik ben uitgerekt tot de volledige hoogte van de grid.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;/div&gt;
-    </code>
-  </pre>
-  <div class="demo">
-    <div class="presentation__grid" style="margin-bottom: 1rem;">
-      <div id="grid-v-top" is="vl-grid" v-top style="height: 5rem;">
-        <div is="vl-column" size="1" max-size="1">
-          <div class="presentation__grid__col" style="height: 3rem;">
-            <p>Ik ben bovenaan gealigneerd, standaard gedrag.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="presentation__grid" style="margin-bottom: 1rem;">
-      <div id="grid-v-center" is="vl-grid" v-center style="height: 5rem;">
-        <div is="vl-column" size="1" max-size="1">
-          <div class="presentation__grid__col" style="height: 3rem;">
-            <p>Ik ben gecentreerd.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="presentation__grid" style="margin-bottom: 1rem;">
-      <div id="grid-v-bottom" is="vl-grid" v-bottom style="height: 5rem;">
-        <div is="vl-column" size="1" max-size="1">
-          <div class="presentation__grid__col" style="height: 3rem;">
-            <p>Ik ben onderaan gealigneerd.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="presentation__grid">
-      <div id="grid-v-stretch" is="vl-grid" v-stretch style="height: 5rem;">
-        <div is="vl-column" size="1" max-size="1">
-          <div class="presentation__grid__col" style="height: 100%;">
-            <p>Ik ben uitgerekt tot de volledige hoogte van de grid.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div>
-  <h2>Columns</h2>
-  <pre>
-      <code class="line-numbers language-markup">
-        &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-column"&gt;
-            &lt;div&gt;
-              &lt;p&gt;12/12 breedte&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      </code>
-    </pre>
-  <div class="demo">
-    <div is="vl-grid">
-      <div id="vl-column-default-size" is="vl-column">
-        <div class="presentation__grid__col">
-          <p>12/12 breedte</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <pre>
-      <code class="line-numbers language-markup">
-        &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-column" size="4"&gt;
-            &lt;div&gt;
-              &lt;p&gt;4/12 breedte&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      </code>
-    </pre>
-  <div class="demo">
-    <div is="vl-grid">
-      <div id="vl-column-default-max-size" is="vl-column" size="4">
-        <div class="presentation__grid__col">
-          <p>4/12 breedte</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <pre>
-    <code class="line-numbers language-markup">
-      &lt;div is="vl-grid"&gt;
-        &lt;div is="vl-column" size="3" max-size="4"&gt;
-          &lt;div&gt;
-            &lt;p&gt;3/4 breedte&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div is="vl-column" size="1" max-size="4"&gt;
-          &lt;div&gt;
-            &lt;p&gt;1/4 breedte&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    </code>
-  </pre>
-  <div class="demo">
-    <div is="vl-grid">
-      <div id="vl-column-3-4-size" is="vl-column" size="3" max-size="4">
-        <div class="presentation__grid__col">
-          <p>3/4 breedte</p>
-        </div>
-      </div>
-      <div id="vl-column-1-4-size" is="vl-column" size="1" max-size="4">
-        <div class="presentation__grid__col">
-          <p>1/4 breedte</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h3>Responsive</h3>
-  <pre>
-      <code class="line-numbers language-markup">
-        &lt;div is="vl-grid"&gt;
-          &lt;div is="vl-column" size="4" max-size="12" medium-size="4" medium-max-size="12" small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12"&gt;
-            &lt;div&gt;
-              &lt;p&gt;4/12 breedte op groot, 8/12 breedte op klein en volledige breedte op extra klein&lt;/p&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      </code>
-    </pre>
-  <div class="demo">
-    <div is="vl-grid">
-      <div id="vl-column-responsive-sizes" is="vl-column" size="4" max-size="12" medium-size="6" medium-max-size="12" small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12">
-        <div class="presentation__grid__col">
-          <p>4/12 breedte op groot, 8/12 breedte op klein en volledige breedte op extra klein</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h3>Pushing a column</h3>
-  <p>Niet geïmplementeerd: <strong>.vl-push--reset</strong></p>
-  <pre>
-    <code class="line-numbers language-markup">
-      &lt;div is="vl-grid"&gt;
-        &lt;div is="vl-column" size="4" max-size="12" push="1"&gt;
-          &lt;div&gt;
-            &lt;p&gt;Pushed met 1/12&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    </code>
-  </pre>
-  <div class="demo">
-    <div is="vl-grid">
-      <div id="vl-column-push" is="vl-column" size="4" max-size="12" push="1">
-        <div class="presentation__grid__col">
-          <p>Pushed met 1/12!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <p>De default push-size</p>
-  <pre>
-    <code class="line-numbers language-markup">
-      &lt;div is="vl-grid"&gt;
-        &lt;div is="vl-column" size="4" max-size="12"&gt;
-          &lt;div&gt;
-            &lt;p&gt;Pushed met 0/12&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    </code>
-  </pre>
-  <div class="demo">
-    <div is="vl-grid">
-      <div id="vl-column-default-push" is="vl-column" size="4" max-size="12">
-        <div class="presentation__grid__col">
-          <p>Pushed met 0/12!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h3>Nesting columns</h3>
-  <pre>
-    <code class="line-numbers language-markup">
-      &lt;div is="vl-grid"&gt;
-        &lt;div is="vl-column" size="7" max-size="12"&gt;
-          &lt;div is="vl-grid"&gt;
-            &lt;div is="vl-column" size="6" max-size="12"&gt;
-              &lt;div&gt;
-                &lt;p&gt;Helft van 7/12&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div is="vl-column" size="6" max-size="12"&gt;
-              &lt;div&gt;
-                &lt;p&gt;Helft van 7/12&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    </code>
-  </pre>
-  <div class="demo">
-    <div is="vl-grid">
-      <div is="vl-column" size="7" max-size="12">
-        <div is="vl-grid">
-          <div is="vl-column" size="6" max-size="12">
-            <div class="presentation__grid__col">
-              <p>Helft van 7/12</p>
+        <vl-demo data-vl-title="Layout">
+            <div id="layout" is="vl-layout">
+                <span>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda dignissimos doloremque eos est
+                    eveniet fugiat illo illum impedit, libero nam, omnis optio praesentium qui quod ratione vel voluptas
+                    voluptatibus?
+                </span>
             </div>
-          </div>
-          <div is="vl-column" size="6" max-size="12">
-            <div class="presentation__grid__col">
-              <p>Helft van 7/12</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </vl-demo>
 
+        <vl-demo data-vl-title="Grid stacking">
+            <div id="grid-stacking" is="vl-grid" is-stacked>
+                <div is="vl-column" size="12">
+                    <div class="presentation__grid__col">
+                        <p>Stacked</p>
+                    </div>
+                </div>
+                <div is="vl-column" size="12">
+                    <div class="presentation__grid__col">
+                        <p>Stacked</p>
+                    </div>
+                </div>
+                <div is="vl-column" size="12">
+                    <div class="presentation__grid__col">
+                        <p>Stacked</p>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid alignment horizontaal">
+            <div id="grid-align-start" is="vl-grid" align-start>
+                <div is="vl-column" size="6">
+                    <div class="presentation__grid__col">
+                        <p>Ik ben links gealigneerd, standaard gedrag.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="grid-align-center" is="vl-grid" align-center>
+                <div is="vl-column" size="6">
+                    <div class="presentation__grid__col">
+                        <p>Ik ben gecentreerd.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="grid-align-end" is="vl-grid" align-end>
+                <div is="vl-column" size="6">
+                    <div class="presentation__grid__col">
+                        <p>Ik ben rechts gealigneerd.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="grid-align-space-between" is="vl-grid" align-space-between>
+                <div is="vl-column" size="4">
+                    <div class="presentation__grid__col">
+                        <p>Er is zoveel mogelijk plaats tussen ons!</p>
+                    </div>
+                </div>
+                <div is="vl-column" size="4">
+                    <div class="presentation__grid__col">
+                        <p>Er is zoveel mogelijk plaats tussen ons!</p>
+                    </div>
+                </div>
+            </div>
+            <div id="grid-align-space-around" is="vl-grid" align-space-around>
+                <div is="vl-column" size="4">
+                    <div class="presentation__grid__col">
+                        <p>Er is zoveel mogelijk plaats rond ons!</p>
+                    </div>
+                </div>
+                <div is="vl-column" size="4">
+                    <div class="presentation__grid__col">
+                        <p>Er is zoveel mogelijk plaats rond ons!</p>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid alignment verticaal">
+            <div class="presentation__grid" style="margin-bottom: 1rem;">
+                <div id="grid-v-top" is="vl-grid" v-top style="height: 5rem;">
+                    <div is="vl-column" size="1" max-size="1">
+                        <div class="presentation__grid__col" style="height: 3rem;">
+                            <p>Ik ben bovenaan gealigneerd, standaard gedrag.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="presentation__grid" style="margin-bottom: 1rem;">
+                <div id="grid-v-center" is="vl-grid" v-center style="height: 5rem;">
+                    <div is="vl-column" size="1" max-size="1">
+                        <div class="presentation__grid__col" style="height: 3rem;">
+                            <p>Ik ben gecentreerd.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="presentation__grid" style="margin-bottom: 1rem;">
+                <div id="grid-v-bottom" is="vl-grid" v-bottom style="height: 5rem;">
+                    <div is="vl-column" size="1" max-size="1">
+                        <div class="presentation__grid__col" style="height: 3rem;">
+                            <p>Ik ben onderaan gealigneerd.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="presentation__grid">
+                <div id="grid-v-stretch" is="vl-grid" v-stretch style="height: 5rem;">
+                    <div is="vl-column" size="1" max-size="1">
+                        <div class="presentation__grid__col" style="height: 100%;">
+                            <p>Ik ben uitgerekt tot de volledige hoogte van de grid.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid columns 12/12">
+            <div is="vl-grid">
+                <div id="vl-column-default-size" is="vl-column" size="12">
+                    <div class="presentation__grid__col">
+                        <p>12/12 breedte</p>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid columns 4/12">
+            <div is="vl-grid">
+                <div id="vl-column-default-max-size" is="vl-column" size="4">
+                    <div class="presentation__grid__col">
+                        <p>4/12 breedte</p>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid columns 3/4 - 1/4">
+            <div is="vl-grid">
+                <div id="vl-column-3-4-size" is="vl-column" size="3" max-size="4">
+                    <div class="presentation__grid__col">
+                        <p>3/4 breedte</p>
+                    </div>
+                </div>
+                <div id="vl-column-1-4-size" is="vl-column" size="1" max-size="4">
+                    <div class="presentation__grid__col">
+                        <p>1/4 breedte</p>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid responsive">
+            <div is="vl-grid">
+                <div id="vl-column-responsive-sizes" is="vl-column" size="4" max-size="12" medium-size="6" medium-max-size="12"
+                    small-size="8" small-max-size="12" extra-small-size="12" extra-small-max-size="12">
+                    <div class="presentation__grid__col">
+                        <p>4/12 breedte op groot, 8/12 breedte op klein en volledige breedte op extra klein</p>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid pushing a column">
+            <div is="vl-grid">
+                <div id="vl-column-push" is="vl-column" size="4" max-size="12" push="1">
+                    <div class="presentation__grid__col">
+                        <p>Pushed met 1/12!</p>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid de default push-size">
+            <div is="vl-grid">
+                <div id="vl-column-default-push" is="vl-column" size="4" max-size="12">
+                    <div class="presentation__grid__col">
+                        <p>Pushed met 0/12!</p>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+
+        <vl-demo data-vl-title="Grid nesting columns">
+            <div is="vl-grid">
+                <div is="vl-column" size="7" max-size="12">
+                    <div is="vl-grid">
+                        <div is="vl-column" size="6" max-size="12">
+                            <div class="presentation__grid__col">
+                                <p>Helft van 7/12</p>
+                            </div>
+                        </div>
+                        <div is="vl-column" size="6" max-size="12">
+                            <div class="presentation__grid__col">
+                                <p>Helft van 7/12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </vl-demo>
+    </vl-demo-page>
 </body>
+
 </html>
