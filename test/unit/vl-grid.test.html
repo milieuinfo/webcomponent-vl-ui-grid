@@ -109,7 +109,7 @@
       test('heeft de vl-region--alt class', () => {
         const element = fixture('vl-region-alt-fixture');
         assert.isTrue(element.classList.contains('vl-region--alt'));
-      })
+      });
     });
 
     suite('vl-layout', () => {
@@ -134,8 +134,8 @@
         const element = fixture('vl-grid-fixture');
         [
           'align-start', 'align-center', 'align-end', 'align-space-between', 'align-space-around',
-          'v-top', 'v-center', 'v-bottom', 'v-stretch'
-        ].forEach(attribuut => {
+          'v-top', 'v-center', 'v-bottom', 'v-stretch',
+        ].forEach((attribuut) => {
           assert.isFalse(element.classList.contains('vl-grid--' + attribuut));
           element.setAttribute(attribuut, '');
           assert.isTrue(element.classList.contains('vl-grid--' + attribuut));
@@ -153,7 +153,7 @@
           assert.isTrue(element.classList.contains(`vl-col--${element.getAttribute('medium-size') || 10}-12--m`));
           assert.isTrue(element.classList.contains(`vl-col--${element.getAttribute('small-size') || 12}-12--s`));
           assert.isTrue(element.classList.contains(`vl-col--${element.getAttribute('extra-small-size') || 12}-12--xs`));
-        })
+        });
       });
 
       test('class komt overeen met attributes size en max-size', () => {
