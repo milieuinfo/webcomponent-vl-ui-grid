@@ -233,15 +233,15 @@ export class VlColumn extends nativeVlElement(HTMLDivElement) {
     }
 
     if (!this.hasAttribute('medium-size')) {
-      this._medium_sizeChangedCallback(null, this._mediumSize);
+      this._mediumSizeChangedCallback(null, this._mediumSize);
     }
 
     if (!this.hasAttribute('small-size')) {
-      this._small_sizeChangedCallback(null, this._smallSize);
+      this._smallSizeChangedCallback(null, this._smallSize);
     }
 
     if (!this.hasAttribute('extra-small--size')) {
-      this._extra_small_sizeChangedCallback(null, this._extraSmallSize);
+      this._extraSmallSizeChangedCallback(null, this._extraSmallSize);
     }
   }
 }
