@@ -1,14 +1,13 @@
-import { NativeVlElement, define } from 'vl-ui-core';
+import {nativeVlElement, define} from vl-ui-core;
 
 /**
  * VlRegion
  * @class
- * @classdesc
- * Het region element (vl-region) wordt gebruikt om secties te definiëren op je website.
- * Het zorgt ervoor dat er consistente spacing is tussen verschillende secties beschikbaar op een pagina.
- * Als een voorbeeld: een pagina die de modules "intro", "portfolio", "nieuws" en "contact" bevat,
- * zal in vier verschillende regions worden gewrapped.
- * @extends VlElement
+ * @classdesc Het region element (vl-region) wordt gebruikt om secties te definiëren op je website. Het zorgt ervoor dat er consistente spacing is tussen verschillende secties beschikbaar op een pagina. Als een voorbeeld: een pagina die de modules "intro", "portfolio", "nieuws" en "contact" bevat, zal in vier verschillende regions worden gewrapped.
+ *
+ * @extends HTMLElement
+ * @mixin nativeVlElement
+ *
  * @property {boolean} alt - Maakt de achtergrond lichtgrijs.
  * @property {boolean} no-space - Gebruik geen marges.
  * @property {boolean} no-space-bottom - Gebruik geen marges onderaan.
@@ -21,7 +20,7 @@ import { NativeVlElement, define } from 'vl-ui-core';
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
-export class VlRegion extends NativeVlElement(HTMLElement) {
+export class VlRegion extends nativeVlElement(HTMLElement) {
   static get _observedClassAttributes() {
     return ['no-space', 'no-space-bottom', 'no-space-top', 'alt', 'small', 'medium', 'bordered'];
   }
@@ -38,17 +37,16 @@ export class VlRegion extends NativeVlElement(HTMLElement) {
 /**
  * VlLayout
  * @class
- * @classdesc
- * Het layout element (vl-layout) centreert uw inhoud in de viewport.
- * Het layout element heeft een breedte van 1200px.
- * Je kan het layout element vergelijken met het Container element in Bootstrap.
- * @extends VlElement
+ * @classdesc Het layout element (vl-layout) centreert uw inhoud in de viewport. Het layout element heeft een breedte van 1200px. Je kan het layout element vergelijken met het Container element in Bootstrap.
+ *
+ * @extends HTMLDivElement
+ * @mixin nativeVlElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
-export class VlLayout extends NativeVlElement(HTMLDivElement) {
+export class VlLayout extends nativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
     return [];
   }
@@ -65,10 +63,11 @@ export class VlLayout extends NativeVlElement(HTMLDivElement) {
 /**
  * VlGrid
  * @class
- * @classdesc
- * De grid(.vl-grid) dient om de lay-out van jouw pagina in orde te brengen.
- * Je kan vl-grid vergelijken met de Row element in Bootstrap.
- * @extends VlElement
+ * @classdesc De grid(.vl-grid) dient om de lay-out van jouw pagina in orde te brengen. Je kan vl-grid vergelijken met de Row element in Bootstrap.
+ *
+ * @extends HTMLDivElement
+ * @mixin nativeVlElement
+ *
  * @property {boolean} is-stacked - Voeg marge toe tussen gestapelde kolommen.
  * @property {boolean} align-start - Aligneer een of meerdere kolommen links.
  * @property {boolean} align-center - Centreer een of meerdere kolommen horizontaal.
@@ -84,13 +83,13 @@ export class VlLayout extends NativeVlElement(HTMLDivElement) {
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
-export class VlGrid extends NativeVlElement(HTMLDivElement) {
+export class VlGrid extends nativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
     return [
       'is-stacked',
       'align-start', 'align-center', 'align-end',
       'align-space-between', 'align-space-around',
-      'v-top', 'v-center', 'v-bottom', 'v-stretch'
+      'v-top', 'v-center', 'v-bottom', 'v-stretch',
     ];
   }
 
@@ -106,9 +105,11 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
 /**
  * VlColumn
  * @class
- * @classdesc
- * De parent van een VlColumn is altijd een VlGrid.
- * @extends VlElement
+ * @classdesc De parent van een VlColumn is altijd een VlGrid.
+ *
+ * @extends HTMLDivElement
+ * @mixin nativeVlElement
+ *
  * @property {number} size - De teller van de verdeling van grote scherm.
  * @property {number} max-size - De noemer van de verdeling van grote scherm.
  * @property {number} small-size - De teller van de verdeling van kleine scherm.
@@ -121,7 +122,7 @@ export class VlGrid extends NativeVlElement(HTMLDivElement) {
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-grid.html|Demo}
  */
-export class VlColumn extends NativeVlElement(HTMLDivElement) {
+export class VlColumn extends nativeVlElement(HTMLDivElement) {
   static get _observedAttributes() {
     return ['size', 'max-size', 'medium-size', 'medium-max-size', 'small-size', 'small-max-size', 'extra-small-size', 'extra-small-max-size', 'push'];
   }
@@ -175,7 +176,7 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
   }
 
   static __sizeClass(minSize, maxSize, responsiveModifier) {
-    return `${minSize}-${maxSize}` + (responsiveModifier ? `--${responsiveModifier}` : '')
+    return `${minSize}-${maxSize}` + (responsiveModifier ? `--${responsiveModifier}` : '');
   }
 
   __changeColumnClass(oldValue, newValue) {
@@ -190,34 +191,34 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
     this.__changeColumnClass(VlColumn.__sizeClass(oldValue, this._maxSize), VlColumn.__sizeClass(newValue, this._maxSize));
   }
 
-  _max_sizeChangedCallback(oldValue, newValue) {
+  _maxSizeChangedCallback(oldValue, newValue) {
     oldValue = oldValue || this._defaultMaxSize;
     this.__changeColumnClass(VlColumn.__sizeClass(this._size, oldValue), VlColumn.__sizeClass(this._size, newValue));
   }
 
-  _medium_sizeChangedCallback(oldValue, newValue) {
+  _mediumSizeChangedCallback(oldValue, newValue) {
     this.__changeColumnClass(VlColumn.__sizeClass(oldValue, this._mediumMaxSize, 'm'), VlColumn.__sizeClass(newValue, this._mediumMaxSize, 'm'));
   }
 
-  _medium_max_sizeChangedCallback(oldValue, newValue) {
+  _mediumMaxSizeChangedCallback(oldValue, newValue) {
     oldValue = oldValue || this._defaultMaxSize;
     this.__changeColumnClass(VlColumn.__sizeClass(this._mediumSize, oldValue, 'm'), VlColumn.__sizeClass(this._mediumSize, newValue, 'm'));
   }
 
-  _small_sizeChangedCallback(oldValue, newValue) {
+  _smallSizeChangedCallback(oldValue, newValue) {
     this.__changeColumnClass(VlColumn.__sizeClass(oldValue, this._smallMaxSize, 's'), VlColumn.__sizeClass(newValue, this._smallMaxSize, 's'));
   }
 
-  _small_max_sizeChangedCallback(oldValue, newValue) {
+  _smallMaxSizeChangedCallback(oldValue, newValue) {
     oldValue = oldValue || this._defaultMaxSize;
     this.__changeColumnClass(VlColumn.__sizeClass(this._smallSize, oldValue, 's'), VlColumn.__sizeClass(this._smallSize, newValue, 's'));
   }
 
-  _extra_small_sizeChangedCallback(oldValue, newValue) {
+  _extraSmallSizeChangedCallback(oldValue, newValue) {
     this.__changeColumnClass(VlColumn.__sizeClass(oldValue, this._extraSmallMaxSize, 'xs'), VlColumn.__sizeClass(newValue, this._extraSmallMaxSize, 'xs'));
   }
 
-  _extra_small_max_sizeChangedCallback(oldValue, newValue) {
+  _extraSmallMaxSizeChangedCallback(oldValue, newValue) {
     oldValue = oldValue || this._defaultMaxSize;
     this.__changeColumnClass(VlColumn.__sizeClass(this._extraSmallSize, oldValue, 'xs'), VlColumn.__sizeClass(this._extraSmallSize, newValue, 'xs'));
   }
@@ -232,21 +233,21 @@ export class VlColumn extends NativeVlElement(HTMLDivElement) {
     }
 
     if (!this.hasAttribute('medium-size')) {
-      this._medium_sizeChangedCallback(null, this._mediumSize);
+      this._mediumSizeChangedCallback(null, this._mediumSize);
     }
 
     if (!this.hasAttribute('small-size')) {
-      this._small_sizeChangedCallback(null, this._smallSize);
+      this._smallSizeChangedCallback(null, this._smallSize);
     }
 
     if (!this.hasAttribute('extra-small--size')) {
-      this._extra_small_sizeChangedCallback(null, this._extraSmallSize);
+      this._extraSmallSizeChangedCallback(null, this._extraSmallSize);
     }
   }
 }
 
-define('vl-region', VlRegion, { extends: 'section' });
-define('vl-layout', VlLayout, { extends: 'div' });
-define('vl-grid', VlGrid, { extends: 'div' });
-define('vl-column', VlColumn, { extends: 'div' });
+define('vl-region', VlRegion, {extends: 'section'});
+define('vl-layout', VlLayout, {extends: 'div'});
+define('vl-grid', VlGrid, {extends: 'div'});
+define('vl-column', VlColumn, {extends: 'div'});
 
