@@ -103,7 +103,7 @@ describe('vl-column', async () => {
 
   it('men kan er op vertrouwen dat er default sizes worden gekozen', async () => {
     const defaultSizeColumn = await vlGridPage.getColumnWithDefaultSize();
-    await assert.eventually.equal(defaultSizeColumn.getSize(), 8);
+    await assert.eventually.equal(defaultSizeColumn.getSize(), 12);
     await assert.eventually.equal(defaultSizeColumn.getMaxSize(), 12);
     await assert.eventually.equal(defaultSizeColumn.getMediumSize(), 10);
     await assert.eventually.equal(defaultSizeColumn.getMediumMaxSize(), 12);
