@@ -6,7 +6,6 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  * @classdesc Het region element (vl-region) wordt gebruikt om secties te definiëren op je website. Het zorgt ervoor dat er consistente spacing is tussen verschillende secties beschikbaar op een pagina. Als een voorbeeld: een pagina die de modules "intro", "portfolio", "nieuws" en "contact" bevat, zal in vier verschillende regions worden gewrapped.
  *
  * @extends HTMLElement
- * @mixin nativeVlElement
  *
  * @property {boolean} alt - Maakt de achtergrond lichtgrijs.
  * @property {boolean} no-space - Gebruik geen marges.
@@ -40,7 +39,6 @@ export class VlRegion extends nativeVlElement(HTMLElement) {
  * @classdesc Het layout element (vl-layout) centreert uw inhoud in de viewport. Het layout element heeft een breedte van 1200px. Je kan het layout element vergelijken met het Container element in Bootstrap.
  *
  * @extends HTMLDivElement
- * @mixin nativeVlElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
@@ -66,7 +64,6 @@ export class VlLayout extends nativeVlElement(HTMLDivElement) {
  * @classdesc De grid(.vl-grid) dient om de lay-out van jouw pagina in orde te brengen. Je kan vl-grid vergelijken met de Row element in Bootstrap.
  *
  * @extends HTMLDivElement
- * @mixin nativeVlElement
  *
  * @property {boolean} is-stacked - Voeg marge toe tussen gestapelde kolommen.
  * @property {boolean} align-start - Aligneer een of meerdere kolommen links.
@@ -108,7 +105,6 @@ export class VlGrid extends nativeVlElement(HTMLDivElement) {
  * @classdesc De parent van een VlColumn is altijd een VlGrid.
  *
  * @extends HTMLDivElement
- * @mixin nativeVlElement
  *
  * @property {number} size - De teller van de verdeling van grote scherm.
  * @property {number} max-size - De noemer van de verdeling van grote scherm.
