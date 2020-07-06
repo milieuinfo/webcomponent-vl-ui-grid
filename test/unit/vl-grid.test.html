@@ -227,6 +227,26 @@
         assert.isFalse(element.classList.contains('vl-col--7-12--xs'));
         assert.isTrue(element.classList.contains('vl-col--7-8--xs'));
       });
+
+      test('de default size waarden worden vervangen', () => {
+        const element = fixture('vl-column-fixture');
+        assert.isTrue(element.classList.contains('vl-col--8-12'));
+        assert.isTrue(element.classList.contains('vl-col--10-12--m'));
+        assert.isTrue(element.classList.contains('vl-col--12-12--s'));
+        assert.isTrue(element.classList.contains('vl-col--12-12--xs'));
+        element.setAttribute('size', 4);
+        element.setAttribute('medium-size', 3);
+        element.setAttribute('small-size', 2);
+        element.setAttribute('extra-small-size', 1);
+        assert.isFalse(element.classList.contains('vl-col--8-12'));
+        assert.isFalse(element.classList.contains('vl-col--10-12--m'));
+        assert.isFalse(element.classList.contains('vl-col--12-12--s'));
+        assert.isFalse(element.classList.contains('vl-col--12-12--xs'));
+        assert.isTrue(element.classList.contains('vl-col--4-12'));
+        assert.isTrue(element.classList.contains('vl-col--3-12--m'));
+        assert.isTrue(element.classList.contains('vl-col--2-12--s'));
+        assert.isTrue(element.classList.contains('vl-col--1-12--xs'));
+      });
     });
   </script>
 </body>
