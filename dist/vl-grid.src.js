@@ -6,14 +6,15 @@ import {nativeVlElement, define} from 'vl-ui-core';
  * @classdesc Het region element (vl-region) wordt gebruikt om secties te definiëren op je website. Het zorgt ervoor dat er consistente spacing is tussen verschillende secties beschikbaar op een pagina. Als een voorbeeld: een pagina die de modules "intro", "portfolio", "nieuws" en "contact" bevat, zal in vier verschillende regions worden gewrapped.
  *
  * @extends HTMLElement
+ * @mixes nativeVlElement
  *
- * @property {boolean} alt - Maakt de achtergrond lichtgrijs.
- * @property {boolean} no-space - Gebruik geen marges.
- * @property {boolean} no-space-bottom - Gebruik geen marges onderaan.
- * @property {boolean} no-space-top - Gebruik geen marges bovenaan.
- * @property {boolean} small - Gebruik kleinere marges.
- * @property {boolean} medium - Gebruik middelgrote marges.
- * @property {boolean} bordered - Teken een rand.
+ * @property {boolean} data-vl-alt - Maakt de achtergrond lichtgrijs.
+ * @property {boolean} data-vl-no-space - Gebruik geen marges.
+ * @property {boolean} data-vl-no-space-bottom - Gebruik geen marges onderaan.
+ * @property {boolean} data-vl-no-space-top - Gebruik geen marges bovenaan.
+ * @property {boolean} data-vl-small - Gebruik kleinere marges.
+ * @property {boolean} data-vl-medium - Gebruik middelgrote marges.
+ * @property {boolean} data-vl-bordered - Teken een rand.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
@@ -39,6 +40,7 @@ export class VlRegion extends nativeVlElement(HTMLElement) {
  * @classdesc Het layout element (vl-layout) centreert uw inhoud in de viewport. Het layout element heeft een breedte van 1200px. Je kan het layout element vergelijken met het Container element in Bootstrap.
  *
  * @extends HTMLDivElement
+ * @mixes nativeVlElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
@@ -64,17 +66,18 @@ export class VlLayout extends nativeVlElement(HTMLDivElement) {
  * @classdesc De grid(.vl-grid) dient om de lay-out van jouw pagina in orde te brengen. Je kan vl-grid vergelijken met de Row element in Bootstrap.
  *
  * @extends HTMLDivElement
+ * @mixes nativeVlElement
  *
- * @property {boolean} is-stacked - Voeg marge toe tussen gestapelde kolommen.
- * @property {boolean} align-start - Aligneer een of meerdere kolommen links.
- * @property {boolean} align-center - Centreer een of meerdere kolommen horizontaal.
- * @property {boolean} align-end - Aligneer een of meerdere kolommen rechts.
- * @property {boolean} align-space-between - Laat zoveel mogelijke ruimte tussen kolommen.
- * @property {boolean} align-space-around - Laat zoveel mogelijke ruimte rond kolommen..
- * @property {boolean} v-top - Aligneer een of meerdere kolommen bovenaan.
- * @property {boolean} v-center - Centreer een of meerdere kolommen verticaal.
- * @property {boolean} v-bottom - Aligneer een of meerdere kolommen onderaan.
- * @property {boolean} v-stretch - Rek de kolommen tot aan hun maximum hoogte.
+ * @property {boolean} data-vl-is-stacked - Voeg marge toe tussen gestapelde kolommen.
+ * @property {boolean} data-vl-align-start - Aligneer een of meerdere kolommen links.
+ * @property {boolean} data-vl-align-center - Centreer een of meerdere kolommen horizontaal.
+ * @property {boolean} data-vl-align-end - Aligneer een of meerdere kolommen rechts.
+ * @property {boolean} data-vl-align-space-between - Laat zoveel mogelijke ruimte tussen kolommen.
+ * @property {boolean} data-vl-align-space-around - Laat zoveel mogelijke ruimte rond kolommen..
+ * @property {boolean} data-vl-v-top - Aligneer een of meerdere kolommen bovenaan.
+ * @property {boolean} data-vl-v-center - Centreer een of meerdere kolommen verticaal.
+ * @property {boolean} data-vl-v-bottom - Aligneer een of meerdere kolommen onderaan.
+ * @property {boolean} data-vl-v-stretch - Rek de kolommen tot aan hun maximum hoogte.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
@@ -105,14 +108,15 @@ export class VlGrid extends nativeVlElement(HTMLDivElement) {
  * @classdesc De parent van een VlColumn is altijd een VlGrid.
  *
  * @extends HTMLDivElement
+ * @mixes nativeVlElement
  *
- * @property {number} size - De teller van de verdeling van grote scherm.
- * @property {number} max-size - De noemer van de verdeling van grote scherm.
- * @property {number} small-size - De teller van de verdeling van kleine scherm.
- * @property {number} small-max-size - De noemer van de verdeling van kleine scherm.
- * @property {number} extra-small-size - De teller van de verdeling van extra kleine scherm.
- * @property {number} extra-small-max-size - De noemer van de verdeling van extra kleine scherm.
- * @property {number} push - aantal partities te verschuiven.
+ * @property {number} data-vl-size - De teller van de verdeling van grote scherm.
+ * @property {number} data-vl-max-size - De noemer van de verdeling van grote scherm.
+ * @property {number} data-vl-small-size - De teller van de verdeling van kleine scherm.
+ * @property {number} data-vl-small-max-size - De noemer van de verdeling van kleine scherm.
+ * @property {number} data-vl-extra-small-size - De teller van de verdeling van extra kleine scherm.
+ * @property {number} data-vl-extra-small-max-size - De noemer van de verdeling van extra kleine scherm.
+ * @property {number} data-vl-push - aantal partities te verschuiven.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/issues|Issues}
