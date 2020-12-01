@@ -1,10 +1,13 @@
-const {assert, driver} = require('vl-ui-core').Test.Setup;
+const {assert, getDriver} = require('vl-ui-core').Test.Setup;
 const VlGridPage = require('./pages/vl-grid.page');
 
 describe('vl-region', async () => {
-  const vlGridPage = new VlGridPage(driver);
+  let driver;
+  let vlGridPage;
 
   before(() => {
+    driver = getDriver();
+    vlGridPage = new VlGridPage(driver);
     return vlGridPage.load();
   });
 
