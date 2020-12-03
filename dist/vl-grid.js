@@ -110,12 +110,14 @@ export class VlGrid extends nativeVlElement(HTMLDivElement) {
  * @extends HTMLDivElement
  * @mixes nativeVlElement
  *
- * @property {number} data-vl-size - De teller van de verdeling van grote scherm.
- * @property {number} data-vl-max-size - De noemer van de verdeling van grote scherm.
- * @property {number} data-vl-small-size - De teller van de verdeling van kleine scherm.
- * @property {number} data-vl-small-max-size - De noemer van de verdeling van kleine scherm.
- * @property {number} data-vl-extra-small-size - De teller van de verdeling van extra kleine scherm.
- * @property {number} data-vl-extra-small-max-size - De noemer van de verdeling van extra kleine scherm.
+ * @property {number} [8] data-vl-size - Het aantal (teller) van het maximum (noemer) dat genomen zal worden bij grote schermen, typisch desktop.
+ * @property {number} [12] data-vl-max-size - Het maximum (noemer) waartegen zal geevalueerd worden bij grote schermen, typisch desktop.
+ * @property {number} [10] data-vl-medium-size - Het aantal (teller) van het maximum (noemer) dat genomen zal worden bij medium schermen, typisch tablet.
+ * @property {number} [12] data-vl-medium-max-size - Het maximum (noemer) waartegen zal geevalueerd worden bij medium schermen, typisch tablet.
+ * @property {number} [12] data-vl-small-size - Het aantal (teller) van het maximum (noemer) dat genomen zal worden bij kleine schermen, typisch mobiel.
+ * @property {number} [12] data-vl-small-max-size - Het maximum (noemer) waartegen zal geevalueerd worden bij kleine schermen, typisch mobiel.
+ * @property {number} [12] data-vl-extra-small-size - Het aantal (teller) van het maximum (noemer) dat genomen zal worden bij zeer kleine schermen.
+ * @property {number} [12] data-vl-extra-small-max-size - Het maximum (noemer) waartegen zal geevalueerd worden bij zeer kleine schermen.
  * @property {number} data-vl-push - aantal partities te verschuiven.
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-grid/releases/latest|Release notes}
