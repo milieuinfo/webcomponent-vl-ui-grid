@@ -22,7 +22,7 @@ import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js'
  */
 export class VlRegion extends nativeVlElement(HTMLElement) {
   static get _observedClassAttributes() {
-    return ['no-space', 'no-space-bottom', 'no-space-top', 'alt', 'small', 'medium', 'bordered'];
+    return ['no-space', 'no-space-bottom', 'no-space-top', 'alt', 'small', 'medium', 'bordered', 'overlap'];
   }
 
   connectedCallback() {

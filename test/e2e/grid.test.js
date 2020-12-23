@@ -17,6 +17,7 @@ describe('vl-region', async () => {
     await assert.eventually.isFalse(region.hasNoSpaceBottom());
     await assert.eventually.isFalse(region.hasNoSpaceTop());
     await assert.eventually.isFalse(region.isAlt());
+    await assert.eventually.isFalse(region.isOverlap());
     await assert.eventually.isFalse(region.isSmall());
     await assert.eventually.isFalse(region.isMedium());
     await assert.eventually.isFalse(region.hasBorder());
@@ -28,6 +29,19 @@ describe('vl-region', async () => {
     await assert.eventually.isFalse(region.hasNoSpaceBottom());
     await assert.eventually.isFalse(region.hasNoSpaceTop());
     await assert.eventually.isTrue(region.isAlt());
+    await assert.eventually.isFalse(region.isOverlap());
+    await assert.eventually.isFalse(region.isSmall());
+    await assert.eventually.isFalse(region.isMedium());
+    await assert.eventually.isFalse(region.hasBorder());
+  });
+
+  it('de overlap region heeft enkel de overlap eigenschap', async () => {
+    const region = await vlGridPage.getOverlapRegion();
+    await assert.eventually.isFalse(region.hasNoSpace());
+    await assert.eventually.isFalse(region.hasNoSpaceBottom());
+    await assert.eventually.isFalse(region.hasNoSpaceTop());
+    await assert.eventually.isFalse(region.isAlt());
+    await assert.eventually.isTrue(region.isOverlap());
     await assert.eventually.isFalse(region.isSmall());
     await assert.eventually.isFalse(region.isMedium());
     await assert.eventually.isFalse(region.hasBorder());

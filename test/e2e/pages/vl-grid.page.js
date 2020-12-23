@@ -30,6 +30,10 @@ class VlGridPage extends Page {
     return this._getRegion('#region-alt');
   }
 
+  async getOverlapRegion() {
+    return this._getRegion('#region-overlap');
+  }
+
   async getLayout() {
     return this._getLayout('#layout');
   }
