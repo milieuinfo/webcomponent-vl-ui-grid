@@ -17,6 +17,10 @@ class VlRegion extends VlElement {
     return this._hasClass('alt');
   }
 
+  async isOverlap() {
+    return this._hasClass('overlap');
+  }
+
   async isSmall() {
     return this._hasClass('small');
   }

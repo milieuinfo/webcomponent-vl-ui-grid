@@ -15,12 +15,19 @@
       <section is="vl-region"></section>
     </template>
   </test-fixture>
+
   <test-fixture id="vl-region-alt-fixture">
     <template>
-      <section is="vl-region" alt></section>
+      <section is="vl-region" data-vl-alt></section>
     </template>
   </test-fixture>
 
+  <test-fixture id="vl-region-overlap-fixture">
+    <template>
+      <section is="vl-region" data-vl-overlap></section>
+    </template>
+  </test-fixture>
+  
   <test-fixture id="vl-layout-fixture">
     <template>
       <div is="vl-layout"></div>
@@ -41,61 +48,61 @@
 
   <test-fixture id="vl-column-size-fixture">
     <template>
-      <div is="vl-column" size="1"></div>
+      <div is="vl-column" data-vl-size="1"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-column-medium-size-fixture">
     <template>
-      <div is="vl-column" medium-size="1"></div>
+      <div is="vl-column" data-vl-medium-size="1"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-column-small-size-fixture">
     <template>
-      <div is="vl-column" small-size="1"></div>
+      <div is="vl-column" data-vl-small-size="1"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-column-extra-small-size-fixture">
     <template>
-      <div is="vl-column" extra-small-size="1"></div>
+      <div is="vl-column" data-vl-extra-small-size="1"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-column-3-4-fixture">
     <template>
-      <div is="vl-column" size="3" max-size="4"></div>
+      <div is="vl-column" data-vl-size="3" data-vl-max-size="4"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-column-3-fixture">
     <template>
-      <div is="vl-column" size="3"></div>
+      <div is="vl-column" data-vl-size="3"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-column-responsive-fixture">
     <template>
-      <div is="vl-column" size="3" medium-size="6" small-size="8" extra-small-size="12"></div>
+      <div is="vl-column" data-vl-size="3" data-vl-medium-size="6" data-vl-small-size="8" data-vl-extra-small-size="12"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-column-default-min-fixture">
     <template>
-      <div is="vl-column" max-size="3" medium-max-size="6" small-max-size="8" extra-small-max-size="12"></div>
+      <div is="vl-column" data-vl-max-size="3" data-vl-medium-max-size="6" data-vl-small-max-size="8" data-vl-extra-small-max-size="12"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-column-push-fixture">
     <template>
-      <div is="vl-column" size="3" push="1"></div>
+      <div is="vl-column" data-vl-size="3" data-vl-push="1"></div>
     </template>
   </test-fixture>
 
   <test-fixture id="vl-grid-is-stacked-fixture">
     <template>
-      <div is="vl-grid" is-stacked></div>
+      <div is="vl-grid" data-vl-is-stacked></div>
     </template>
   </test-fixture>
 
@@ -193,37 +200,37 @@
 
         // normal
         assert.isTrue(element.classList.contains('vl-col--3-12'));
-        element.setAttribute('size', 1);
+        element.setAttribute('data-vl-size', 1);
         assert.isFalse(element.classList.contains('vl-col--3-12'));
         assert.isTrue(element.classList.contains('vl-col--1-12'));
-        element.setAttribute('max-size', 2);
+        element.setAttribute('data-vl-max-size', 2);
         assert.isFalse(element.classList.contains('vl-col--1-12'));
         assert.isTrue(element.classList.contains('vl-col--1-2'));
 
         // medium
         assert.isTrue(element.classList.contains('vl-col--6-12--m'));
-        element.setAttribute('medium-size', 3);
+        element.setAttribute('data-vl-medium-size', 3);
         assert.isFalse(element.classList.contains('vl-col--6-12--m'));
         assert.isTrue(element.classList.contains('vl-col--3-12--m'));
-        element.setAttribute('medium-max-size', 4);
+        element.setAttribute('data-vl-medium-max-size', 4);
         assert.isFalse(element.classList.contains('vl-col--3-12--m'));
         assert.isTrue(element.classList.contains('vl-col--3-4--m'));
 
         // small
         assert.isTrue(element.classList.contains('vl-col--8-12--s'));
-        element.setAttribute('small-size', 5);
+        element.setAttribute('data-vl-small-size', 5);
         assert.isFalse(element.classList.contains('vl-col--8-12--s'));
         assert.isTrue(element.classList.contains('vl-col--5-12--s'));
-        element.setAttribute('small-max-size', 6);
+        element.setAttribute('data-vl-small-max-size', 6);
         assert.isFalse(element.classList.contains('vl-col--5-12--s'));
         assert.isTrue(element.classList.contains('vl-col--5-6--s'));
 
         // extra small
         assert.isTrue(element.classList.contains('vl-col--12-12--xs'));
-        element.setAttribute('extra-small-size', 7);
+        element.setAttribute('data-vl-extra-small-size', 7);
         assert.isFalse(element.classList.contains('vl-col--12-12--xs'));
         assert.isTrue(element.classList.contains('vl-col--7-12--xs'));
-        element.setAttribute('extra-small-max-size', 8);
+        element.setAttribute('data-vl-extra-small-max-size', 8);
         assert.isFalse(element.classList.contains('vl-col--7-12--xs'));
         assert.isTrue(element.classList.contains('vl-col--7-8--xs'));
       });
