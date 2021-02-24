@@ -42,6 +42,14 @@ class VlGridPage extends Page {
     return this._getGrid('#grid-stacking');
   }
 
+  async getStackedLargeGrid() {
+    return this._getGrid('#grid-stacking-large');
+  }
+
+  async getStackedSmallGrid() {
+    return this._getGrid('#grid-stacking-small');
+  }
+
   async getStartAlignedGrid() {
     return this._getGrid('#grid-align-start');
   }

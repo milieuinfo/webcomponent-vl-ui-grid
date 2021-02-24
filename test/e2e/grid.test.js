@@ -60,6 +60,16 @@ describe('vl-grid', async () => {
     await assert.eventually.isTrue(stackedGrid.isStacked());
   });
 
+  it('men kan een grid stacked large maken', async () => {
+    const stackedGrid = await vlGridPage.getStackedLargeGrid();
+    await assert.eventually.isTrue(stackedGrid.isStackedLarge());
+  });
+
+  it('men kan een grid stacked small maken', async () => {
+    const stackedGrid = await vlGridPage.getStackedSmallGrid();
+    await assert.eventually.isTrue(stackedGrid.isStackedSmall());
+  });
+
   it('men kan een grid links aligneren', async () => {
     const startAlignedGrid = await vlGridPage.getStartAlignedGrid();
     await assert.eventually.isTrue(startAlignedGrid.isHorizontallyStartAligned());
