@@ -27,7 +27,7 @@
       <section is="vl-region" data-vl-overlap></section>
     </template>
   </test-fixture>
-  
+
   <test-fixture id="vl-layout-fixture">
     <template>
       <div is="vl-layout"></div>
@@ -106,6 +106,18 @@
     </template>
   </test-fixture>
 
+  <test-fixture id="vl-grid-is-stacked-large-fixture">
+    <template>
+      <div is="vl-grid" data-vl-is-stacked-large></div>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-grid-is-stacked-small-fixture">
+    <template>
+      <div is="vl-grid" data-vl-is-stacked-small></div>
+    </template>
+  </test-fixture>
+
   <script>
     suite('vl-region', () => {
       test('heeft de vl-region class', () => {
@@ -135,6 +147,16 @@
       test('heeft de vl-grid--is-stacked class', () => {
         const element = fixture('vl-grid-is-stacked-fixture');
         assert.isTrue(element.classList.contains('vl-grid--is-stacked'));
+      });
+
+      test('heeft de vl-grid--is-stacked-large class', () => {
+        const element = fixture('vl-grid-is-stacked-large-fixture');
+        assert.isTrue(element.classList.contains('vl-grid--is-stacked-large'));
+      });
+
+      test('heeft de vl-grid--is-stacked-small class', () => {
+        const element = fixture('vl-grid-is-stacked-small-fixture');
+        assert.isTrue(element.classList.contains('vl-grid--is-stacked-small'));
       });
 
       test('krijgt de alignment classes bij zetten van attribuut', () => {
