@@ -69,6 +69,8 @@ export class VlLayout extends nativeVlElement(HTMLDivElement) {
  * @mixes nativeVlElement
  *
  * @property {boolean} data-vl-is-stacked - Voeg marge toe tussen gestapelde kolommen.
+ * @property {boolean} data-vl-is-stacked-small - Voeg wat minder marge toe tussen gestapelde kolommen.
+ * @property {boolean} data-vl-is-stacked-large - Voeg wat meer marge toe tussen gestapelde kolommen.
  * @property {boolean} data-vl-align-start - Aligneer een of meerdere kolommen links.
  * @property {boolean} data-vl-align-center - Centreer een of meerdere kolommen horizontaal.
  * @property {boolean} data-vl-align-end - Aligneer een of meerdere kolommen rechts.
@@ -86,7 +88,7 @@ export class VlLayout extends nativeVlElement(HTMLDivElement) {
 export class VlGrid extends nativeVlElement(HTMLDivElement) {
   static get _observedClassAttributes() {
     return [
-      'is-stacked',
+      'is-stacked', 'is-stacked-small', 'is-stacked-large',
       'align-start', 'align-center', 'align-end',
       'align-space-between', 'align-space-around',
       'v-top', 'v-center', 'v-bottom', 'v-stretch',

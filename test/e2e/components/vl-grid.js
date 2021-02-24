@@ -53,6 +53,14 @@ class VlGrid extends VlElement {
     return this._hasClass('is-stacked');
   }
 
+  async isStackedLarge() {
+    return this._hasClass('is-stacked-large');
+  }
+
+  async isStackedSmall() {
+    return this._hasClass('is-stacked-small');
+  }
+
   async isHorizontallyStartAligned() {
     return this._hasClass('align-start');
   }
