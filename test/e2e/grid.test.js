@@ -11,6 +11,10 @@ describe('vl-region', async () => {
     return vlGridPage.load();
   });
 
+  it('WCAG', async () => {
+    await assert.eventually.isFalse(vlGridPage.hasWcagIssues());
+  });
+
   it('de gewone region heeft geen speciale eigenschappen', async () => {
     const region = await vlGridPage.getRegion();
     await assert.eventually.isFalse(region.hasNoSpace());
